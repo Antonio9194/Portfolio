@@ -1,3 +1,4 @@
+/* Import component styles */
 @import url('/css/components/navbar.css');
 @import url('/css/components/hero.css');
 @import url('/css/components/portfolio.css');
@@ -10,49 +11,115 @@
 @import url('/css/components/tech.css');
 
 /* Global layout settings */
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Let content grow and footer stick to bottom */
-body {
+main {
   flex: 1;
-  scroll-behavior: smooth;
-  background-color: white;
 }
 
-/* Optional: Wrap content in a centered container */
+/* Container */
 .container {
   max-width: 1500px;
   width: 100%;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
-/* Footer should push down */
+/* Footer should stick to bottom */
 body > footer {
   margin-top: auto;
 }
 
+/* Typography defaults */
+h1, h2, h3, h4, h5 {
+  margin: 0.5rem 0;
+}
+
+/* Responsive breakpoints */
 @media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
   .container {
-    width: 700px;
+    max-width: 700px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 5px;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
   .container {
-    width: 500px;
+    max-width: 500px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero h5 {
+    font-size: 1rem;
+  }
+
+  .icon-stack img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about img {
+    width: 100%;
+    height: auto;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
   .container {
-    width: 300px;
+    max-width: 90%;
+  }
+
+  .hero {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .portfolio .card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  nav div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
   }
 }
