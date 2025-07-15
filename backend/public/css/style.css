@@ -9,146 +9,50 @@
 @import url('/css/components/loginform.css');
 @import url('/css/components/tech.css');
 
-/* Base font and layout settings */
+/* Global layout settings */
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: white;
-  scroll-behavior: smooth;
-}
-
-/* Containers */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Header / Navbar */
-.navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 1rem;
-  background-color: #f8f9fa;
+  flex-direction: column;
 }
 
-.navbar h1 {
-  font-size: 1.8rem;
-  margin: 0;
+/* Let content grow and footer stick to bottom */
+body {
+  flex: 1;
+  scroll-behavior: smooth;
+  background-color: white;
 }
 
-.navbar a,
-.navbar button {
-  margin: 0.5rem;
-  text-decoration: none;
-  color: #333;
+/* Optional: Wrap content in a centered container */
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
+/* Footer should push down */
+body > footer {
+  margin-top: auto;
 }
 
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-/* About */
-.about {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.about img {
-  max-width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-/* Portfolio */
-.portfolio {
-  padding: 3rem 1rem;
-}
-
-.card {
-  margin-bottom: 2rem;
-}
-
-/* Tech Stack */
-.tech {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.icon-stack img {
-  max-width: 60px;
-  margin: 0.5rem;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #f1f1f1;
-}
-
-/* RESPONSIVENESS */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;  /* Added for better stacking */
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
   }
+}
 
-  .navbar h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
   }
+}
 
-  /* Adjust margin for vertical layout of nav links/buttons */
-  .navbar a,
-  .navbar button {
-    margin: 0.3rem 0;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero h5 {
-    font-size: 1rem;
-  }
-
-  .about h3,
-  .about h4 {
-    font-size: 1.1rem;
-  }
-
-  .card .card-title {
-    font-size: 1rem;
-  }
-
-  .card .card-text {
-    font-size: 0.9rem;
-  }
-
-  .icon-stack img {
-    max-width: 40px;
-  }
-
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
   }
 }
