@@ -13,44 +13,46 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
-  background-color: white;
-}
-
-/* Container for main content */
-.container {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 1rem; /* Add side padding for small screens */
-  box-sizing: border-box;
 }
 
 /* Let content grow and footer stick to bottom */
 body {
   flex: 1;
+  scroll-behavior: smooth;
+  background-color: white;
 }
 
+/* Optional: Wrap content in a centered container */
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Footer should push down */
 body > footer {
   margin-top: auto;
 }
 
-/* Optional: Responsive font size */
-html {
-  font-size: 100%;
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
 }
 
 @media (max-width: 720px) {
-  html {
-    font-size: 95%;
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
   }
 }
 
 @media (max-width: 540px) {
-  html {
-    font-size: 90%;
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
   }
 }
