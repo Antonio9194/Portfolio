@@ -15,6 +15,11 @@ img {
   border-radius: 13px;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -170,4 +175,87 @@ hr {
   margin-right: 360px;
   max-width: 700px;
   width: 100%;
+}
+
+.about-section {
+  background-color: white;
+  border: 2px solid #b7a261;
+  padding: 8px 16px;
+  border-radius: 13px;
+  margin: 2rem 0;
+}
+
+.project-section {
+  background-color: white;
+  border: 2px solid #b7a261;
+  padding: 8px 16px;
+  border-radius: 13px;
+  margin: 2rem 0;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f6efd9;
+  border: 1px solid #b7a261;
+  padding: 8px 16px;
+  border-radius: 13px;
+  margin: 8px;
+}
+
+.project p {
+  background-color: #fef6dd;
+  border: 1px solid #b7a261;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 8px;
+  height: 120px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.stack span {
+  background-color: #fef6dd;
+  border: 1px solid #b7a261;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.buttons a {
+  text-align: center;
+  background-color: #e0ce93;
+  padding: 8px;
+  border-radius: 13px;
+  border: 2px solid #b7a261;
+  width: 100%;
+}
+
+.skills-section {
+  background-color: white;
+  border: 2px solid #b7a261;
+  padding: 8px 16px;
+  border-radius: 13px;
+  margin: 2rem 0;
 }
