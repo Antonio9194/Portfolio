@@ -1,14 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f6efd9;
   font-family: "Poppins", sans-serif;
-}
-
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  padding: 40px;
 }
 
 img {
@@ -71,11 +67,13 @@ img {
   width: 250px;
   height: 250px;
   background-color: #f9f6ea;
-  border: 1px solid #b7a261;
   border-radius: 13px;
   width: 100%;
 }
-.fa-envelope, .fa-location-dot, .fa-calendar {
+
+.fa-envelope,
+.fa-location-dot,
+.fa-calendar {
   width: 20px;
   height: 20px;
   padding: 6px;
@@ -88,7 +86,9 @@ hr {
   width: 90%;
   opacity: 50%;
 }
-.mail, .location, .date {
+.mail,
+.location,
+.date {
   display: flex;
   align-items: center;
   justify-content: left;
@@ -101,9 +101,17 @@ hr {
   color: black;
 }
 
-.main {
-  max-width: 700px;
-  width: 80%;
+.cv {
+  margin-top: 1.4rem;
+}
+
+.cv a {
+  text-decoration: none;
+  color: black;
+  background-color: #e0ce93;
+  padding: 8px;
+  border-radius: 13px;
+  border: 2px solid #b7a261;
 }
 
 .navbar {
@@ -111,4 +119,55 @@ hr {
   right: 32px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: white;
+  border: 2px solid #b7a261;
+  border-radius: 13px;
+  width: 100px;
+  height: 250px;
+  padding: 8px;
+}
+
+.aboutnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fef6dd;
+  padding: 8px;
+  border-radius: 13px;
+  width: 70px;
+  height: 70px;
+}
+
+.aboutnav:hover {
+  background-color: #b7a261;
+  color: white;
+}
+
+.aboutnav:hover a {
+  color: white;
+}
+
+.aboutnav a {
+  text-decoration: none;
+  color: black;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 560px;
+  margin-right: 360px;
+  max-width: 700px;
+  width: 100%;
 }
