@@ -202,7 +202,7 @@ hr {
   margin: 8px;
 }
 
-.project p {
+.project p, .about-section p {
   background-color: #fef6dd;
   border: 1px solid #b7a261;
   color: #333;
