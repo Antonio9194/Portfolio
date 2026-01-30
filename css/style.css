@@ -177,7 +177,9 @@ hr {
   width: 100%;
 }
 
-.about-section, .project-section, .skills-section {
+.about-section,
+.project-section,
+.skills-section {
   background-color: white;
   border: 2px solid #b7a261;
   padding: 8px 16px;
@@ -186,12 +188,14 @@ hr {
   width: 100%;
 }
 
-.projects, .skills {
+.projects,
+.skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.project, .skill {
+.project,
+.skill {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -202,7 +206,8 @@ hr {
   margin: 8px;
 }
 
-.project p, .about-section p {
+.project p,
+.about-section p {
   background-color: #fef6dd;
   border: 1px solid #b7a261;
   color: #333;
@@ -251,4 +256,24 @@ hr {
   padding: 8px 16px;
   border-radius: 13px;
   margin: 2rem 0;
+}
+
+@media (min-width: 2560px) {
+  .media {
+    min-width: 2400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .about-section,
+  .project-section,
+  .skills-section {
+    width: 150%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 1024px) {
+  
 }
