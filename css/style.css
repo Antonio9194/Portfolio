@@ -306,18 +306,14 @@ img {
 }
 
 .fa-envelope, .fa-location-dot, .fa-calendar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 26px;
-  width: 26px;
-  height: 26px;
+  display: inline-block;
+  padding: 6px 7px;
   background: rgba(201, 168, 76, 0.09);
   border: 1px solid var(--border-gold);
   border-radius: 7px;
   color: var(--gold-1);
-  font-size: 0.7rem;
-  padding: 0;
+  font-size: 0.8rem;
+  flex-shrink: 0;
 }
 
 .mailto { color: var(--text-2); }
