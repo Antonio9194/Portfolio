@@ -1,12 +1,9 @@
 {
-  "short_name": "",
-  "name": "",
-  "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "short_name": "Antonio V.",
+  "name": "Antonio Vinciguerra — Full-stack developer",
+  "icons": [{ "src": "img/avatar.png", "type": "image/png", "sizes": "1024x1024" }],
+  "start_url": "/",
+  "background_color": "#0b1326",
+  "display": "browser",
+  "theme_color": "#0b1326"
 }

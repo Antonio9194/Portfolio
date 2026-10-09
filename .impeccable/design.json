@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T18:00:00+09:00",
+  "title": "Design System: Antonio Vinciguerra — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Navy Glass",
+        "canonical": "oklch(19% 0.041 265.5)",
+        "tonalRamp": [
+          "#040a1c",
+          "#1b2539",
+          "#384258",
+          "#566179",
+          "#77829b",
+          "#99a5bf",
+          "#bdc9e4",
+          "#e7effe"
+        ]
+      },
+      "board": {
+        "role": "neutral",
+        "displayName": "Board Navy",
+        "canonical": "oklch(23% 0.052 266.5)",
+        "tonalRamp": [
+          "#030921",
+          "#19243f",
+          "#35415e",
+          "#536180",
+          "#7482a3",
+          "#96a5c7",
+          "#bac9ec",
+          "#e8effe"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Display Black",
+        "canonical": "oklch(13% 0.017 262.2)",
+        "tonalRamp": [
+          "#070b13",
+          "#20252e",
+          "#3d424b",
+          "#5c616b",
+          "#7d838d",
+          "#9fa5b0",
+          "#c3c9d5",
+          "#e8effa"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Light",
+        "canonical": "oklch(96% 0.018 272.3)",
+        "tonalRamp": [
+          "#090b13",
+          "#22252e",
+          "#3f424c",
+          "#5d616c",
+          "#7e828d",
+          "#a1a5b1",
+          "#c5c9d5",
+          "#eaeefb"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Light 2",
+        "canonical": "oklch(81% 0.041 271.4)",
+        "tonalRamp": [
+          "#06091c",
+          "#1e2439",
+          "#3a4158",
+          "#596079",
+          "#79819b",
+          "#9ba4bf",
+          "#bfc8e5",
+          "#e9eefe"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Light 3",
+        "canonical": "oklch(68% 0.049 270.2)",
+        "tonalRamp": [
+          "#05091f",
+          "#1c233d",
+          "#38415c",
+          "#56607e",
+          "#7781a0",
+          "#99a4c5",
+          "#bdc8ea",
+          "#e8eeff"
+        ]
+      },
+      "route": {
+        "role": "primary",
+        "displayName": "Asakusa Rose",
+        "canonical": "oklch(73% 0.163 25.8)",
+        "tonalRamp": [
+          "#200000",
+          "#4d0004",
+          "#81000d",
+          "#aa2d2c",
+          "#d2524c",
+          "#fa776e",
+          "#ffb3ab",
+          "#ffe9e6"
+        ]
+      },
+      "route-deep": {
+        "role": "primary",
+        "displayName": "Asakusa Rose, deep",
+        "canonical": "oklch(69% 0.202 27.5)",
+        "tonalRamp": [
+          "#210000",
+          "#4d0002",
+          "#810007",
+          "#b8020f",
+          "#e23d36",
+          "#ff7367",
+          "#ffb3a9",
+          "#ffe9e6"
+        ]
+      },
+      "route-dim": {
+        "role": "primary",
+        "displayName": "Asakusa Rose, dim",
+        "canonical": "rgba(255, 123, 114, 0.28)",
+        "tonalRamp": [
+          "#200000",
+          "#4d0004",
+          "#81000d",
+          "#aa2d2c",
+          "#d2524c",
+          "#fa776e",
+          "#ffb3ab",
+          "#ffe9e6"
+        ]
+      },
+      "beam": {
+        "role": "primary",
+        "displayName": "Headlight Amber",
+        "canonical": "rgba(255, 162, 31, 0.45)",
+        "tonalRamp": [
+          "#160700",
+          "#371e00",
+          "#5e3801",
+          "#895300",
+          "#b67004",
+          "#e58e01",
+          "#ffb96b",
+          "#ffebd6"
+        ]
+      },
+      "ginza": {
+        "role": "secondary",
+        "displayName": "Ginza Orange",
+        "canonical": "oklch(79% 0.167 67.5)",
+        "tonalRamp": [
+          "#160700",
+          "#371e00",
+          "#5e3801",
+          "#895300",
+          "#b67004",
+          "#e58e01",
+          "#ffb96b",
+          "#ffebd6"
+        ]
+      },
+      "marunouchi": {
+        "role": "secondary",
+        "displayName": "Marunouchi Red",
+        "canonical": "oklch(65% 0.239 23.7)",
+        "tonalRamp": [
+          "#200001",
+          "#4d0008",
+          "#800014",
+          "#b80021",
+          "#f01333",
+          "#fe736f",
+          "#feb3ad",
+          "#fee9e7"
+        ]
+      },
+      "tozai": {
+        "role": "secondary",
+        "displayName": "Tozai Sky",
+        "canonical": "oklch(73% 0.130 221.4)",
+        "tonalRamp": [
+          "#000e14",
+          "#002a36",
+          "#034a5c",
+          "#016c85",
+          "#0791b1",
+          "#11b7df",
+          "#66daff",
+          "#d8f4fe"
+        ]
+      },
+      "chiyoda": {
+        "role": "secondary",
+        "displayName": "Chiyoda Green",
+        "canonical": "oklch(78% 0.165 163.9)",
+        "tonalRamp": [
+          "#001007",
+          "#002d1d",
+          "#004f36",
+          "#027351",
+          "#049a6d",
+          "#09c28b",
+          "#3aeaac",
+          "#c2ffe1"
+        ]
+      },
+      "hanzomon": {
+        "role": "secondary",
+        "displayName": "Hanzomon Purple",
+        "canonical": "oklch(72% 0.164 293.4)",
+        "tonalRamp": [
+          "#10002c",
+          "#2d0064",
+          "#4a238f",
+          "#6847b4",
+          "#896ada",
+          "#ab8fff",
+          "#cbbffe",
+          "#efecfe"
+        ]
+      },
+      "namboku": {
+        "role": "secondary",
+        "displayName": "Namboku Teal",
+        "canonical": "oklch(77% 0.132 183.6)",
+        "tonalRamp": [
+          "#000f0c",
+          "#002c27",
+          "#024d46",
+          "#057166",
+          "#0a9789",
+          "#0fbead",
+          "#45e5d2",
+          "#b9fff3"
+        ]
+      },
+      "oedo": {
+        "role": "secondary",
+        "displayName": "Oedo Magenta",
+        "canonical": "oklch(61% 0.244 348.4)",
+        "tonalRamp": [
+          "#1e0010",
+          "#48002e",
+          "#780050",
+          "#ac0274",
+          "#e01a9a",
+          "#ff61bb",
+          "#feacd5",
+          "#fee7f2"
+        ]
+      },
+      "mita": {
+        "role": "secondary",
+        "displayName": "Mita Blue",
+        "canonical": "oklch(67% 0.157 246.6)",
+        "tonalRamp": [
+          "#000c1d",
+          "#002744",
+          "#004573",
+          "#0365a4",
+          "#0487da",
+          "#45acff",
+          "#9ccffe",
+          "#e1f1ff"
+        ]
+      },
+      "shinjuku": {
+        "role": "secondary",
+        "displayName": "Shinjuku Leaf",
+        "canonical": "oklch(80% 0.167 139.9)",
+        "tonalRamp": [
+          "#001000",
+          "#062e00",
+          "#145000",
+          "#227502",
+          "#42992c",
+          "#66be52",
+          "#8be377",
+          "#cdffc2"
+        ]
+      },
+      "yurakucho": {
+        "role": "secondary",
+        "displayName": "Yurakucho Gold",
+        "canonical": "oklch(79% 0.104 87.1)",
+        "tonalRamp": [
+          "#120a00",
+          "#302300",
+          "#533f02",
+          "#7a5d01",
+          "#9d7e2d",
+          "#c1a153",
+          "#e6c577",
+          "#ffedc4"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "stroke": {
+        "role": "neutral",
+        "displayName": "Stroke",
+        "canonical": "rgba(238, 242, 255, 0.35)",
+        "tonalRamp": [
+          "#090b13",
+          "#22252e",
+          "#3f424c",
+          "#5d616c",
+          "#7e828d",
+          "#a1a5b1",
+          "#c5c9d5",
+          "#eaeefb"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(238, 242, 255, 0.12)",
+        "tonalRamp": [
+          "#090b13",
+          "#22252e",
+          "#3f424c",
+          "#5d616c",
+          "#7e828d",
+          "#a1a5b1",
+          "#c5c9d5",
+          "#eaeefb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The station name in the board header only; clamp(26px, 7.4vw, 40px) under 820px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads on the line (Projects, Skills)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Station names in each station head; 24px under 820px. The qualifier beneath (Habit RPG · iOS, Live · Rails) is 14px/500/0.04em in Light 2."
+      },
+      "board": {
+        "displayName": "Next-Station Board",
+        "purpose": "The three section links under the route map."
+      },
+      "small-headline": {
+        "displayName": "Small Headline",
+        "purpose": "The route-map title; the same 22px numbers the header badge."
+      },
+      "line-name": {
+        "displayName": "Line Name",
+        "purpose": "Skill line names in the lines-serving list, terminal names on the map, and the indicator's current code (18px/900 in rose)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs at a 62ch measure; 16px under 820px. Station copy in Light 2."
+      },
+      "name": {
+        "displayName": "Name",
+        "purpose": "Station names under the map and exit button labels; 16px for live stations and on mobile; wraps at 13px (terminals 15px, live 14px) between 820 and 1100px."
+      },
+      "stack": {
+        "displayName": "Stack",
+        "purpose": "Stack chips after their coloured square; the station qualifier shares the size at 500."
+      },
+      "sub": {
+        "displayName": "Second Line",
+        "purpose": "The English second line on every section heading (Station information, All stations, Connecting lines), inset 0.6em and raised 0.25em, in Light 3; the untracked second line under the next-station links; the indicator's station name at 700 in white."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "The indicator strip's base size and its Next <station> text at 75% white."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked labels: fact keys, NOW AT and NEXT on the indicator, the map's App Store / Live · Rails sub-labels (0.06em); the untracked ← → ride key hints share the 11px step at 50%."
+      },
+      "code": {
+        "displayName": "Station Code",
+        "purpose": "Numbers in the ringed square; line letter at 0.72em raised; scales 16/17/20/22px with the square."
+      }
+    },
+    "shadows": [
+      {
+        "name": "route-glow",
+        "value": "0 0 14px rgba(255, 123, 114, 0.55)",
+        "purpose": "The rose halo on the map's lit segment, the lit rail and the current station mark only (--glow). The dim line ahead of the train never glows."
+      },
+      {
+        "name": "ticket-lift",
+        "value": "0 10px 22px -10px rgba(0, 0, 0, 0.8)",
+        "purpose": "The CV ticket at rest; hover 0 12px 24px -10px rgba(0, 0, 0, 0.8)."
+      },
+      {
+        "name": "indicator-lift",
+        "value": "0 0 0 1px rgba(238, 242, 255, 0.12), 0 12px 28px -10px rgba(0, 0, 0, 0.8)",
+        "purpose": "The sticky in-car indicator strip; the 1px ring is its bezel."
+      },
+      {
+        "name": "object-lift",
+        "value": "0 18px 36px -14px rgba(0, 0, 0, 0.9)",
+        "purpose": "The terminal icons on the map, the 48px station icon and the portrait."
+      },
+      {
+        "name": "phone-lift",
+        "value": "0 0 0 1px rgba(238, 242, 255, 0.14), 0 18px 36px -14px rgba(0, 0, 0, 0.9)",
+        "purpose": "Screenshots and the trailer video; the ring keeps a black app screen legible on navy."
+      },
+      {
+        "name": "train-halo",
+        "value": "filter: drop-shadow(0 0 10px rgba(238, 242, 255, 0.55))",
+        "purpose": "The white light of the train glyph while it is moving only; off at rest and under reduced motion."
+      },
+      {
+        "name": "headlight",
+        "value": "linear-gradient(to right, rgba(255, 162, 31, 0.45), rgba(255, 162, 31, 0)); 80px × 24px ahead of the nose; clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%)",
+        "purpose": "The amber beam ahead of the moving train on the map; nose-down (rail, and map under 820px) it is 24px × 80px, to bottom, polygon(40% 0, 60% 0, 100% 100%, 0 100%). Hidden under reduced motion."
+      },
+      {
+        "name": "mark-halo",
+        "value": "0 0 0 4px #0b1326",
+        "purpose": "Every station mark; the current one appends route-glow."
+      },
+      {
+        "name": "interchange-ring",
+        "value": "0 0 0 4px #0b1326, 0 0 0 7px #ff7b72",
+        "purpose": "Double ring on a terminal's station code, at every width."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The shared easing for state transitions, the mark arrival and both opening keyframes."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "The decelerating ease for the doors pulse and the headlight fade."
+      },
+      {
+        "name": "spring",
+        "value": "Spring(response, ratio = 1): k = (2π / response)², c = 2 · ratio · √k; semi-implicit Euler, four substeps per frame, dt capped at 50ms; settled when |v| < 0.5 and |x − target| < 0.5",
+        "purpose": "The one model that moves the train: critically damped so it never overshoots a station, always re-targeted from its current position so a scroll, tap or key mid-ride redirects it without a jump. Under prefers-reduced-motion the spring sets its value instantly."
+      },
+      {
+        "name": "rail-ride",
+        "value": "spring, response 0.45s; target = the rail point 38% down the viewport, re-targeted on every scroll (rAF-throttled) and reset on resize",
+        "purpose": "The rail train following the reader; it drives the lit rail, the is-here / is-passed classes and the indicator text each frame."
+      },
+      {
+        "name": "map-ride",
+        "value": "spring, response 0.55s over stop indices, interpolating dock points (desktop x = code.left − 8 − 80; mobile y = code.top − 8 − 80)",
+        "purpose": "The map train riding to the station being read (on announce) or the station tapped (with the doors pulse); it scales the map's lit segment to its nose each frame."
+      },
+      {
+        "name": "ride-scroll",
+        "value": "window.scrollTo({ top: mark centre − 38% of the viewport height + 2px, behavior: smooth })",
+        "purpose": "A tap on a map stop or a ← → / j k key press scrolls so the station's mark lands under the rail train; behavior auto under reduced motion."
+      },
+      {
+        "name": "rail-light",
+        "value": "transform: scaleY(train y / rail height), set each frame by the rail spring",
+        "purpose": "The lit rail extending to the train's position; no transition under reduced motion."
+      },
+      {
+        "name": "map-light",
+        "value": "transform: scaleX((train x + 80) / line width) (scaleY on the vertical map), set each frame by the map spring",
+        "purpose": "The map line lit as far as the train's nose, dim beyond it."
+      },
+      {
+        "name": "doors",
+        "value": "420ms ease-out; scale 1 → 1.14 at 35% → 1; is-boarding held 450ms by script",
+        "purpose": "The station code pulsing once as the doors open when the map train settles at a tapped stop; off under reduced motion."
+      },
+      {
+        "name": "headlight-fade",
+        "value": "opacity 160ms ease-out, 0 → 1 while is-moving",
+        "purpose": "The headlight beam appearing as the train starts to move and fading as it settles; the white halo switches with the same class."
+      },
+      {
+        "name": "line-draw",
+        "value": "1100ms both; scaleX(0) to scaleX(1) from the left (scaleY from the top under 820px)",
+        "purpose": "The map line drawing itself on load; only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "stop-light",
+        "value": "520ms both, delay 260ms + i × 70ms; opacity 0 to 1, translateY(6px) to none, brightness(2.2) to 1",
+        "purpose": "Each map stop lighting in sequence on load; only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "mark-arrive",
+        "value": "transform 500ms, background 300ms",
+        "purpose": "A station mark filling rose and scaling 1.25 when it becomes the current station."
+      },
+      {
+        "name": "lift",
+        "value": "220ms",
+        "purpose": "Ticket rise and map-code scale 1.06 on hover (fine pointers) and focus."
+      },
+      {
+        "name": "press",
+        "value": "100ms; scale 0.96",
+        "purpose": "A map-code pressed."
+      },
+      {
+        "name": "invert",
+        "value": "160ms",
+        "purpose": "Button background/colour inversion on hover/focus."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "820px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ticket",
+      "kind": "button",
+      "refersTo": "ticket",
+      "description": "The primary action in the header: the CV as the ticket you tap at the gate. A light plate with navy text and a single-line label after a dotted stub icon.",
+      "html": "<a class=\"ds-ticket\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.5a1.5 1.5 0 0 0 0 3V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2.5a1.5 1.5 0 0 0 0-3Z\"/><path d=\"M14 6v12\" stroke-dasharray=\"2 2\"/></svg><span>View CV</span></a>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 14px; min-height: 48px; background: #eef2ff; color: #0b1326; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 17px; line-height: 1.6; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; box-shadow: 0 10px 22px -10px rgba(0, 0, 0, 0.8); transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ticket:hover, .ds-ticket:focus-visible { transform: translateY(-1px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.8); } .ds-ticket:focus-visible { outline: 3px solid #2d9cf0; outline-offset: 3px; } .ds-ico { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Action",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "Secondary header action: an outlined plate with a 2px stroke at 35% light that inverts to a light plate on hover and focus.",
+      "html": "<a class=\"ds-action\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"5.5\" width=\"17\" height=\"13\" rx=\"2\"/><path d=\"m4 7 8 6 8-6\"/></svg><span>Email</span></a>",
+      "css": ".ds-action { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 16px; border: 2px solid rgba(238, 242, 255, 0.35); border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 17px; line-height: 1.6; color: #eef2ff; background: transparent; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; transition: background 160ms cubic-bezier(0.16, 1, 0.3, 1), color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-action:hover, .ds-action:focus-visible { background: #eef2ff; color: #0b1326; border-color: #eef2ff; } .ds-action:focus-visible { outline: 3px solid #2d9cf0; outline-offset: 3px; } .ds-ico { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Exit, primary",
+      "kind": "button",
+      "refersTo": "exit-primary",
+      "description": "The one primary way out of a station (App Store, Live, GitHub when it is the only link). Rose fill with navy text; hover and focus invert to the light plate.",
+      "html": "<a class=\"ds-exit ds-exit--primary\" href=\"#\"><svg class=\"ds-ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.8-3.1-.8C6.1 7.4 3.9 9.4 3.9 13c0 2.1.8 4.4 1.8 5.9.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-3.5-1.3-3.5-3.5zM14.1 5.6c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z\" fill=\"currentColor\" stroke=\"none\"/></svg>App Store</a>",
+      "css": ".ds-exit { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 16px; border: 2px solid rgba(238, 242, 255, 0.35); border-radius: 10px; font-weight: 700; font-size: 15px; line-height: 1.6; text-decoration: none; color: #eef2ff; background: transparent; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; transition: background 160ms cubic-bezier(0.16, 1, 0.3, 1), color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-exit:hover, .ds-exit:focus-visible { background: #eef2ff; color: #0b1326; border-color: #eef2ff; } .ds-exit--primary { background: #ff7b72; border-color: #ff7b72; color: #0b1326; } .ds-exit--primary:hover, .ds-exit--primary:focus-visible { background: #eef2ff; border-color: #eef2ff; color: #0b1326; } .ds-exit:focus-visible { outline: 3px solid #2d9cf0; outline-offset: 3px; } .ds-ico { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Exit",
+      "kind": "button",
+      "refersTo": "exit",
+      "description": "Secondary station link (GitHub, Web, Back to the start). Outlined at 35% light; inverts to the light plate on hover and focus.",
+      "html": "<a class=\"ds-exit\" href=\"#\">GitHub</a>",
+      "css": ".ds-exit { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 16px; border: 2px solid rgba(238, 242, 255, 0.35); border-radius: 10px; font-weight: 700; font-size: 15px; line-height: 1.6; text-decoration: none; color: #eef2ff; background: transparent; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; transition: background 160ms cubic-bezier(0.16, 1, 0.3, 1), color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-exit:hover, .ds-exit:focus-visible { background: #eef2ff; color: #0b1326; border-color: #eef2ff; } .ds-exit:focus-visible { outline: 3px solid #2d9cf0; outline-offset: 3px; }"
+    },
+    {
+      "name": "Station Code",
+      "kind": "custom",
+      "refersTo": "station-code",
+      "description": "The ringed rounded square that numbers every station: board-navy fill, rose ring, line letter small and raised, number large, 900 weight. The large badge adds the ground + rose interchange ring. On the map it scales 1.06 on hover and focus, 0.96 on press, and pulses once (doors) when the train docks.",
+      "html": "<span class=\"ds-code\" aria-hidden=\"true\"><b>A</b>01</span> <span class=\"ds-code ds-code--lg\" aria-hidden=\"true\"><b>A</b>00</span>",
+      "css": ".ds-code { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 42px; height: 42px; border-radius: 10px; border: 3px solid #ff7b72; background: #121c36; color: #eef2ff; font-size: 15px; font-weight: 900; letter-spacing: 0.02em; line-height: 1; font-variant-numeric: tabular-nums; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; vertical-align: middle; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-code b { font-size: 0.72em; margin-right: 1px; align-self: flex-start; margin-top: 2px; } .ds-code:hover, .ds-code:focus-visible { transform: scale(1.06); } .ds-code:active { transform: scale(0.96); transition-duration: 100ms; } .ds-code--lg { width: 64px; height: 64px; border-width: 5px; border-radius: 14px; font-size: 22px; margin-left: 12px; box-shadow: 0 0 0 4px #0b1326, 0 0 0 7px #ff7b72; }"
+    },
+    {
+      "name": "Stack Lines",
+      "kind": "chip",
+      "refersTo": "line-chip",
+      "description": "A project's stack as lines: a 14px line-coloured square before a 14px/700 label. Tokyo line colours appear only here and in the skills bands.",
+      "html": "<ul class=\"ds-lines\" aria-label=\"Stack\"><li class=\"ds-l-rails\">Ruby on Rails</li><li class=\"ds-l-pg\">PostgreSQL</li><li class=\"ds-l-swift\">Swift · SwiftUI</li><li class=\"ds-l-storekit\">StoreKit 2</li><li class=\"ds-l-ai\">OpenAI API</li></ul>",
+      "css": ".ds-lines { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; color: #eef2ff; } .ds-lines li { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; line-height: 1.6; } .ds-lines li::before { content: \"\"; width: 14px; height: 14px; border-radius: 4px; background: var(--c, #8d98b8); flex: none; } .ds-l-rails { --c: #ff2d3f; } .ds-l-pg { --c: #2d9cf0; } .ds-l-swift { --c: #ffa21f; } .ds-l-storekit { --c: #a98cff; } .ds-l-ai { --c: #15d99c; } .ds-l-stimulus { --c: #16b8e0; } .ds-l-js { --c: #d9b86a; } .ds-l-ejs { --c: #7ed66a; } .ds-l-tools { --c: #1fcfbd; }"
+    },
+    {
+      "name": "In-Car Indicator",
+      "kind": "custom",
+      "refersTo": "indicator",
+      "description": "The display above the doors as one sticky strip: NOW AT, the code in rose, the name in white, then behind a 14% divider NEXT <station> and the ← → ride key hints; 42px tall with a 1px light bezel (38px on mobile, without Next and keys).",
+      "html": "<aside class=\"ds-indicator\" aria-hidden=\"true\"><span class=\"ds-indicator__label\">Now at</span><span class=\"ds-indicator__code\">A05</span><span class=\"ds-indicator__name\">Morikoya</span><span class=\"ds-indicator__next\"><small>Next</small> Watch List</span><span class=\"ds-indicator__keys\"><kbd>←</kbd><kbd>→</kbd> ride</span></aside>",
+      "css": ".ds-indicator { display: flex; align-items: center; gap: 12px; height: 42px; padding: 0 14px; background: #05080f; color: #fff; border-radius: 10px; box-shadow: 0 0 0 1px rgba(238, 242, 255, 0.12), 0 12px 28px -10px rgba(0, 0, 0, 0.8); font-size: 12px; line-height: 1.2; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; } .ds-indicator__label { letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; opacity: 0.65; flex: none; } .ds-indicator__code { font-size: 18px; font-weight: 900; color: #ff7b72; font-variant-numeric: tabular-nums; flex: none; } .ds-indicator__name { font-weight: 700; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; } .ds-indicator__next { margin-left: auto; padding-left: 12px; border-left: 1px solid rgba(238, 242, 255, 0.14); font-size: 12px; font-weight: 500; color: rgba(238, 242, 255, 0.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; } .ds-indicator__next small { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; margin-right: 4px; } .ds-indicator__keys { font-size: 11px; color: rgba(238, 242, 255, 0.5); display: flex; align-items: center; gap: 4px; flex: none; } .ds-indicator__keys kbd { font: inherit; padding: 0 5px; border: 1px solid rgba(238, 242, 255, 0.25); border-radius: 4px; line-height: 1.5; }"
+    },
+    {
+      "name": "Train",
+      "kind": "custom",
+      "refersTo": "train",
+      "description": "The one train, as it sits on the route map: an 80×24 side-view glyph with the body in Light, a rose roof stripe, board-navy windows, navy door seams at 50% and a Ginza headlamp. While moving it takes the amber headlight beam and the white halo; on the rail it is rotated 90° nose-down.",
+      "html": "<span class=\"ds-train is-moving\"><svg class=\"ds-train__glyph\" viewBox=\"0 0 80 24\" aria-hidden=\"true\"><path class=\"ds-train__body\" d=\"M5 3h58c7 0 12 2.5 15 8.5v1c-3 6-8 8.5-15 8.5H5a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z\"/><rect class=\"ds-train__stripe\" x=\"1\" y=\"3.5\" width=\"73\" height=\"2\" rx=\"1\"/><g class=\"ds-train__windows\"><rect x=\"7\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"18\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"29\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"40\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"51\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><path d=\"M63 8.5h2c4 0 8 1.5 10 3.5-2 2-6 3.5-10 3.5h-2z\"/></g><g class=\"ds-train__doors\"><rect x=\"16.5\" y=\"7\" width=\"1\" height=\"13\"/><rect x=\"38.5\" y=\"7\" width=\"1\" height=\"13\"/></g><circle class=\"ds-train__lamp\" cx=\"74\" cy=\"17.5\" r=\"1.7\"/></svg></span>",
+      "css": ".ds-train { position: relative; display: block; width: 80px; height: 24px; margin: 16px 96px 16px 16px; pointer-events: none; } .ds-train__glyph { display: block; width: 100%; height: 100%; overflow: visible; } .ds-train__body { fill: #eef2ff; } .ds-train__stripe { fill: #ff7b72; } .ds-train__windows rect, .ds-train__windows path { fill: #121c36; } .ds-train__doors rect { fill: #0b1326; opacity: 0.5; } .ds-train__lamp { fill: #ffa21f; } .ds-train::after { content: \"\"; position: absolute; left: 100%; top: 50%; width: 80px; height: 24px; margin-top: -12px; background: linear-gradient(to right, rgba(255, 162, 31, 0.45), rgba(255, 162, 31, 0)); clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%); opacity: 0; transition: opacity 160ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-train.is-moving::after { opacity: 1; } .ds-train.is-moving .ds-train__glyph { filter: drop-shadow(0 0 10px rgba(238, 242, 255, 0.55)); } @media (prefers-reduced-motion: reduce) { .ds-train::after { opacity: 0; } .ds-train.is-moving .ds-train__glyph { filter: none; } }"
+    },
+    {
+      "name": "Line, Station Marks and Train",
+      "kind": "custom",
+      "refersTo": "station-code",
+      "description": "The route as the night display draws it: dim ahead, lit and glowing as far as the train's nose; a passed mark (rose ring), the current mark (rose fill, glow), an unreached mark (dim ring), and the train glyph at rest (matte). On the rail the same parts stand vertical with the train nose-down.",
+      "html": "<div class=\"ds-rail\"><span class=\"ds-rail__lit\"></span><span class=\"ds-mark ds-mark--passed\"></span><span class=\"ds-mark ds-mark--here\"></span><span class=\"ds-train ds-train--still\"><svg class=\"ds-train__glyph\" viewBox=\"0 0 80 24\" aria-hidden=\"true\"><path class=\"ds-train__body\" d=\"M5 3h58c7 0 12 2.5 15 8.5v1c-3 6-8 8.5-15 8.5H5a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z\"/><rect class=\"ds-train__stripe\" x=\"1\" y=\"3.5\" width=\"73\" height=\"2\" rx=\"1\"/><g class=\"ds-train__windows\"><rect x=\"7\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"18\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"29\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"40\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"51\" y=\"8.5\" width=\"8\" height=\"7\" rx=\"1.5\"/><path d=\"M63 8.5h2c4 0 8 1.5 10 3.5-2 2-6 3.5-10 3.5h-2z\"/></g><g class=\"ds-train__doors\"><rect x=\"16.5\" y=\"7\" width=\"1\" height=\"13\"/><rect x=\"38.5\" y=\"7\" width=\"1\" height=\"13\"/></g><circle class=\"ds-train__lamp\" cx=\"74\" cy=\"17.5\" r=\"1.7\"/></svg></span><span class=\"ds-mark\"></span></div>",
+      "css": ".ds-rail { position: relative; display: flex; align-items: center; gap: 28px; padding: 16px 24px; background: #0b1326; } .ds-rail::before { content: \"\"; position: absolute; left: 0; right: 0; top: 50%; height: 10px; margin-top: -5px; background: rgba(255, 123, 114, 0.28); border-radius: 5px; } .ds-rail__lit { position: absolute; left: 0; width: 62%; top: 50%; height: 10px; margin-top: -5px; background: #ff7b72; border-radius: 5px; box-shadow: 0 0 14px rgba(255, 123, 114, 0.55); } .ds-mark { position: relative; z-index: 2; width: 22px; height: 22px; border-radius: 50%; background: #121c36; border: 5px solid rgba(255, 123, 114, 0.28); box-shadow: 0 0 0 4px #0b1326; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), background 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-mark--passed { border-color: #ff7b72; } .ds-mark--here { border-color: #ff7b72; background: #ff7b72; transform: scale(1.25); box-shadow: 0 0 0 4px #0b1326, 0 0 14px rgba(255, 123, 114, 0.55); } .ds-train { position: relative; z-index: 3; display: block; width: 80px; height: 24px; pointer-events: none; } .ds-train__glyph { display: block; width: 100%; height: 100%; overflow: visible; } .ds-train__body { fill: #eef2ff; } .ds-train__stripe { fill: #ff7b72; } .ds-train__windows rect, .ds-train__windows path { fill: #121c36; } .ds-train__doors rect { fill: #0b1326; opacity: 0.5; } .ds-train__lamp { fill: #ffa21f; }"
+    },
+    {
+      "name": "Next-Station Board",
+      "kind": "nav",
+      "refersTo": "exit",
+      "description": "Section navigation under the route map: three 900-weight links, each with a 13px second line in Light 3, no rule above; hover turns rose.",
+      "html": "<nav class=\"ds-next\" aria-label=\"Sections\"><a href=\"#\">About <span>Next stop</span></a><a href=\"#\">Projects <span>All stations · 11 stops</span></a><a href=\"#\">Skills <span>Connecting lines</span></a></nav>",
+      "css": ".ds-next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; color: #eef2ff; } .ds-next a { padding: 14px 4px 16px; text-decoration: none; color: inherit; font-weight: 900; font-size: clamp(18px, 2.2vw, 24px); line-height: 1.1; letter-spacing: -0.01em; display: flex; flex-direction: column; gap: 2px; min-height: 48px; } .ds-next a span { font-size: 13px; font-weight: 500; color: #8d98b8; } .ds-next a:hover, .ds-next a:focus-visible { color: #ff7b72; } .ds-next a:focus-visible { outline: 3px solid #2d9cf0; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Lines Serving",
+      "kind": "custom",
+      "refersTo": "line-chip",
+      "description": "A skill row: an 18×36px line-coloured band, the 18px/900 line name, then the stations it reaches in Light 2.",
+      "html": "<ul class=\"ds-serving\"><li class=\"ds-serving__line\" style=\"--c:#ff2d3f\"><span class=\"ds-serving__band\"></span><strong>Backend</strong><span>Ruby · Ruby on Rails · PostgreSQL · REST/JSON APIs</span></li><li class=\"ds-serving__line\" style=\"--c:#ffa21f\"><span class=\"ds-serving__band\"></span><strong>iOS</strong><span>Swift · SwiftUI · StoreKit 2 · WidgetKit</span></li></ul>",
+      "css": ".ds-serving { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; font-family: \"Zen Kaku Gothic New\", \"Hiragino Sans\", \"Noto Sans JP\", \"Helvetica Neue\", Arial, sans-serif; color: #eef2ff; font-size: 17px; line-height: 1.6; } .ds-serving__line { display: grid; grid-template-columns: 18px 140px minmax(0, 1fr); gap: 18px; align-items: center; padding: 12px 0; } .ds-serving__band { width: 18px; height: 36px; border-radius: 5px; background: var(--c); } .ds-serving__line strong { font-size: 18px; font-weight: 900; } .ds-serving__line span:last-child { color: #b7c0dc; font-weight: 500; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The In-Car Route Display",
+    "overview": "The whole portfolio is one Tokyo transit line, read on the LCD above the train door at night. The page is deep navy glass; everything that was ink on enamel is now light on glass: near-white text, a single rose route line that enters at the route map, runs down the left edge of every section and closes the page as the footer's top rule. Every project is a numbered station on that line (A01 to A11); the two App Store apps are the terminals, drawn larger and double-ringed as interchanges. Reading the page is riding the line, and there is one train, seen twice. On the route map a side-view train glyph (80×24, light body, rose roof stripe, lit windows, amber headlamp) sits on the line and docks just short of each station sign; tap a station and it rides there on a critically damped spring while the page scrolls so that station's mark lands under the train on the rail. On the vertical rail the same glyph, nose down, follows the reader to a point 38% down the viewport, lighting the rail behind it and announcing every mark it passes on the in-car display strip. The line is lit only as far as the train has come, on the map and on the rail alike; the display lights up on load (the map line draws itself, the stations light one by one); the passed stations keep their rose ring.\n\nDensity is signage density. Nothing is boxed; information sits directly on the glass and is organised by the line, by station codes in ringed rounded squares, and by weight. Headings carry a second, smaller line the way every platform sign does, in the same face, one step down and tracked; all copy is English (the earlier Japanese sub-labels were removed on 2026-10-09 at the owner's request). Icons are pictograms: stroked SVG at 1.8px, round-capped, never glyph fonts. The Tokyo Metro and Toei line colours appear, lightened so they read as lit segments on the display, but strictly to name the skill lines (Rails is Marunouchi red, PostgreSQL is Mita blue, Swift is Ginza orange); the page itself has exactly one colour, Asakusa-Line rose, and light is rationed: the route glows where it is lit, the train's headlamp and halo light up only while it moves, and nothing else glows.\n\nRejected on the evidence of the build: the category arrangement of hero-name-over-avatar and a grid of equal project cards. There are no cards, no eyebrows or kickers, no decorative dividers, no second display face, and no glow on anything that is not the route or the moving train.",
+    "keyCharacteristics": [
+      "Navy glass ground, near-white light as \"ink\"; one route colour carries the page; nine lightened Tokyo line colours only ever name a skill line, and Ginza orange alone doubles as the train's headlamp.",
+      "No cards and no boxes; the rose line, the station marks and heavy weight do the structuring.",
+      "A single signage face (Zen Kaku Gothic New) at four weights, heavy for names, light-tracked small caps for labels; English copy only.",
+      "Station codes in rounded squares with a rose ring on a slightly lighter navy fill.",
+      "One train, seen twice: the same 80×24 SVG glyph rides the route map between station signs and, rotated nose-down, rides the rail with the reader.",
+      "The route is the only thing that glows, and only where it is lit: the map's lit segment, the lit rail and the current station mark carry the rose halo; the moving train carries an amber headlight beam and a white halo; everything else is matte.",
+      "Motion is the train: two critically damped springs (rail 0.45s, map 0.55s, no overshoot) plus the opening light-up; every other transition is a 100–220ms state change."
+    ],
+    "rules": [
+      {
+        "name": "The One Route Rule",
+        "body": "The page has one accent, Asakusa rose, and it is spent only on the line (lit or dim), the train's roof stripe, the rings and marks, the dots, the indicator code, the one primary exit per station, link hover and selection. No heading, background or secondary button is rose; the ticket in the header is light, not rose, so the CV reads as the thing you hold rather than part of the line.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lines Name Lines Rule",
+        "body": "A Tokyo line colour may only identify a skill line, as a 14px square or an 18px band beside its name. It never fills a button, tints a background, colours a heading or decorates anything. The single exception is Ginza orange as the train's headlamp and beam: a lamp on the one object that moves, not a label.",
+        "section": "colors"
+      },
+      {
+        "name": "The Second Line Rule",
+        "body": "Every section heading and every station title that has a qualifier carries its second line in the same face, smaller, lighter and tracked, in English; it is part of the sign, never a kicker above it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Heavy Names Rule",
+        "body": "Anything that names a station (header, section heads, station titles, map names at terminals, next-station links, line names, the indicator code) is 900 weight. Body, legends and labels never exceed 700.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Cast Rule",
+        "body": "Only objects cast shadows; text blocks, sections, lists and the page never do. If a new element is not something you could hold in front of the display, it gets no shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Light Rule",
+        "body": "The rose glow is applied only to the route, and only where it is lit: the map's lit segment, the lit rail and the active station mark. The dim line ahead of the train never glows. The train lights up only while it moves: amber headlight ahead, white halo on the glyph. Everything else is matte; a glow on a button, a heading, a chip or a card is a violation, not a variant.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Line Is The Rule Rule",
+        "body": "Structural rules are the route line itself: the 13px map line, the 10px rail, the 10px terminus top edge. The next-station board carries no rule and nothing stacks with hairlines. The only other 1px lines are on objects, not between content: the bezel rings on the indicator and the phones, the divider inside the indicator strip before `Next`, and the outlines of the `kbd` key hints.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep Asakusa rose (`route`) for the line, the train's roof stripe, the rings and marks, the dots, the indicator code, the one primary exit per station, link hover and selection; use dim rose (`route-dim`) only for the route switched off (the unlit map line and rail ahead of the train, the unreached mark ring, the scrollbar).",
+      "Do give every new station a code in the ringed rounded square (42px, 10px radius, 3px ring, board-navy fill), a stop on the map the train can dock at, and a mark on the rail that starts dim and lights when the train passes.",
+      "Do set every name at 900 weight in Zen Kaku Gothic New and carry a 13px/500 tracked English second line on section headings; keep all copy English.",
+      "Do use stroked 24-viewBox SVG pictograms at 1.8px stroke, round caps and joins, sized 18–20px.",
+      "Do cap copy at the 62ch measure and keep body at 17px/1.6 (16px under 820px).",
+      "Do keep shadows to lifted objects, downward with negative spread, in black at 80–90% alpha, with a 1px 12–14% light bezel on objects that are themselves dark.",
+      "Do keep the route glow on exactly the map's lit segment, the lit rail and the active station mark, and the amber headlight and white halo on the moving train alone.",
+      "Do keep the train as the one authored moment: the opening light-up, the two critically damped springs (rail 0.45s, map 0.55s, no overshoot) and the doors pulse on docking; gate the opening behind `prefers-reduced-motion: no-preference`, set the springs instantly and switch off beam, halo and pulse under reduced motion; state transitions stay at 100–220ms on the shared eases.",
+      "Do keep every interactive target at 44–48px minimum height and the 3px Mita focus ring."
+    ],
+    "donts": [
+      "Don't add cards, boxed sections, filled panels or bordered containers; the build has none.",
+      "Don't add kickers or eyebrows above headings; the second line lives below or beside the name, never above it.",
+      "Don't use a Tokyo line colour for anything other than naming its skill line as a square or band; the train's Ginza headlamp is the one lamp, not a precedent.",
+      "Don't introduce a second typeface, a monospace face, or a system display face; one signage grotesque carries everything, key hints included.",
+      "Don't draw decorative dividers or hairlines between stations or between links; the rail is the only vertical rule and the route line the only horizontal one.",
+      "Don't use icon fonts, glyph icons or filled emoji-style icons; the Apple mark and the train are the only filled paths and both are inline SVG.",
+      "Don't put a glow, a neon stroke or a coloured halo on a button, heading, chip, code, card or phone, and never on the dim line ahead of the train; light belongs to the lit route and the moving train only.",
+      "Don't fill a secondary button or the ticket with rose, or tint the ground; the rose fill is reserved for the one primary exit per station.",
+      "Don't draw a second train, a dot marker or a streak; there is one train glyph, seen twice, and it moves only on its springs."
+    ]
+  }
+}

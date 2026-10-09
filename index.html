@@ -1,453 +1,409 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta name="description" content="" />
-
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:alt" content="" />
-
-    <!-- <link rel="icon" href="/smoke.ico" sizes="any" /> -->
-    <link rel="icon" type="image/png" href="/smoke.png" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/smoke.svg" /> -->
-    <link rel="apple-touch-icon" href="/smoke.png" />
-
+    <title>Antonio Vinciguerra — Full-stack developer, Tokyo</title>
+    <meta
+      name="description"
+      content="Antonio Vinciguerra builds iOS apps and Rails backends in Tokyo. Soul Bound and Velora on the App Store, plus the Rails tools behind them."
+    />
+    <meta property="og:title" content="Antonio Vinciguerra — Full-stack developer, Tokyo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Two apps on the App Store, Rails backends, eight years of hotel operations behind them." />
+    <meta property="og:image" content="img/avatar.png" />
+    <meta property="og:image:alt" content="Antonio Vinciguerra" />
+    <meta name="theme-color" content="#0b1326" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="apple-touch-icon" href="img/avatar.png" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#090c14" />
-    <script
-      src="https://kit.fontawesome.com/b502c362c1.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- Sticky top navbar (outside container for full-width) -->
-    <div class="navbar">
-      <nav class="nav">
-        <div class="aboutnav">
-          <i class="fa-regular fa-address-card"></i>
-          <a href="#about">About</a>
+    <a class="skip" href="#projects">Skip to projects</a>
+
+    <!-- Station board: who this is, read like the sign on the platform -->
+    <header class="board" id="top">
+      <div class="board__id">
+        <span class="code code--lg" aria-hidden="true"><b>A</b>00</span>
+        <div class="board__name">
+          <h1 class="board__station">Antonio Vinciguerra</h1>
+          <p class="board__desc">iOS apps <span class="dot" aria-hidden="true"></span> Rails backends <span class="dot" aria-hidden="true"></span> Tokyo, Japan</p>
         </div>
-        <div class="aboutnav">
-          <i class="fa-solid fa-laptop-code"></i>
-          <a href="#projects">Projects</a>
-        </div>
-        <div class="aboutnav">
-          <i class="fa-solid fa-brain"></i>
-          <a href="#skills">Skills</a>
-        </div>
+      </div>
+
+      <nav class="board__actions" aria-label="Contact">
+        <a class="ticket" href="img/CV.pdf" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.5a1.5 1.5 0 0 0 0 3V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2.5a1.5 1.5 0 0 0 0-3Z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg>
+          <span>View CV</span>
+        </a>
+        <a class="action" href="https://github.com/Antonio9194" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.1-.2-4.4-1.1-4.4-4.7 0-1 .4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9 9 0 0 1 4.8 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.6 1 2.6 0 3.6-2.3 4.5-4.4 4.7.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5Z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a class="action" href="mailto:anto.vinciguerra@hotmail.com">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>Email</span>
+        </a>
       </nav>
+    </header>
+
+    <!-- Route map: the whole career in one line -->
+    <section class="route" aria-labelledby="route-title">
+      <h2 class="route__title" id="route-title">Route map</h2>
+      <p class="route__legend">Eleven stations, two terminals on the App Store. Tap a station to ride there.</p>
+
+      <ol class="map" aria-label="Projects on the line">
+        <li class="map__lit" aria-hidden="true"></li>
+        <li class="map__train" aria-hidden="true"><span class="train train--map"><svg class="train__glyph" viewBox="0 0 80 24" aria-hidden="true"><path class="train__body" d="M5 3h58c7 0 12 2.5 15 8.5v1c-3 6-8 8.5-15 8.5H5a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><rect class="train__stripe" x="1" y="3.5" width="73" height="2" rx="1"/><g class="train__windows"><rect x="7" y="8.5" width="8" height="7" rx="1.5"/><rect x="18" y="8.5" width="8" height="7" rx="1.5"/><rect x="29" y="8.5" width="8" height="7" rx="1.5"/><rect x="40" y="8.5" width="8" height="7" rx="1.5"/><rect x="51" y="8.5" width="8" height="7" rx="1.5"/><path d="M63 8.5h2c4 0 8 1.5 10 3.5-2 2-6 3.5-10 3.5h-2z"/></g><g class="train__doors"><rect x="16.5" y="7" width="1" height="13"/><rect x="38.5" y="7" width="1" height="13"/></g><circle class="train__lamp" cx="74" cy="17.5" r="1.7"/></svg></span></li>
+        <li class="map__stop map__stop--terminal">
+          <a href="#soul-bound">
+            <span class="map__art"><img src="img/soulbound-icon.png" alt="" width="64" height="64" /></span>
+            <span class="code" aria-hidden="true"><b>A</b>01</span>
+            <span class="map__name">Soul Bound</span>
+            <span class="map__sub">App Store</span>
+          </a>
+        </li>
+        <li class="map__stop map__stop--terminal">
+          <a href="#velora">
+            <span class="map__art"><img src="img/velora-icon.png" alt="" width="64" height="64" /></span>
+            <span class="code" aria-hidden="true"><b>A</b>02</span>
+            <span class="map__name">Velora</span>
+            <span class="map__sub">App Store</span>
+          </a>
+        </li>
+        <li class="map__stop map__stop--live"><a href="#hotel-finance"><span class="code" aria-hidden="true"><b>A</b>03</span><span class="map__name">Hotel Finance</span><span class="map__sub">Live · Rails</span></a></li>
+        <li class="map__stop map__stop--live"><a href="#inventory"><span class="code" aria-hidden="true"><b>A</b>04</span><span class="map__name">Inventory</span><span class="map__sub">Live · Rails</span></a></li>
+        <li class="map__stop map__stop--live"><a href="#morikoya"><span class="code" aria-hidden="true"><b>A</b>05</span><span class="map__name">Morikoya</span><span class="map__sub">Live · Rails</span></a></li>
+        <li class="map__stop"><a href="#watch-list"><span class="code" aria-hidden="true"><b>A</b>06</span><span class="map__name">Watch List</span></a></li>
+        <li class="map__stop"><a href="#airbnb"><span class="code" aria-hidden="true"><b>A</b>07</span><span class="map__name">Marketplace</span></a></li>
+        <li class="map__stop"><a href="#yelp"><span class="code" aria-hidden="true"><b>A</b>08</span><span class="map__name">Reviews</span></a></li>
+        <li class="map__stop"><a href="#task-manager"><span class="code" aria-hidden="true"><b>A</b>09</span><span class="map__name">Tasks</span></a></li>
+        <li class="map__stop"><a href="#ping-bot"><span class="code" aria-hidden="true"><b>A</b>10</span><span class="map__name">Ping Bot</span></a></li>
+        <li class="map__stop"><a href="#insurance"><span class="code" aria-hidden="true"><b>A</b>11</span><span class="map__name">Insurance</span></a></li>
+      </ol>
+
+      <nav class="next" aria-label="Sections">
+        <a href="#about">About <span>Next stop</span></a>
+        <a href="#projects">Projects <span>All stations · 11 stops</span></a>
+        <a href="#skills">Skills <span>Connecting lines</span></a>
+      </nav>
+    </section>
+
+    <!-- The line runs down the rest of the page; the indicator rides it -->
+    <div class="line">
+      <span class="rail-lit" aria-hidden="true"></span>
+      <span class="train train--rail" aria-hidden="true"><svg class="train__glyph" viewBox="0 0 80 24" aria-hidden="true"><path class="train__body" d="M5 3h58c7 0 12 2.5 15 8.5v1c-3 6-8 8.5-15 8.5H5a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><rect class="train__stripe" x="1" y="3.5" width="73" height="2" rx="1"/><g class="train__windows"><rect x="7" y="8.5" width="8" height="7" rx="1.5"/><rect x="18" y="8.5" width="8" height="7" rx="1.5"/><rect x="29" y="8.5" width="8" height="7" rx="1.5"/><rect x="40" y="8.5" width="8" height="7" rx="1.5"/><rect x="51" y="8.5" width="8" height="7" rx="1.5"/><path d="M63 8.5h2c4 0 8 1.5 10 3.5-2 2-6 3.5-10 3.5h-2z"/></g><g class="train__doors"><rect x="16.5" y="7" width="1" height="13"/><rect x="38.5" y="7" width="1" height="13"/></g><circle class="train__lamp" cx="74" cy="17.5" r="1.7"/></svg></span>
+      <aside class="indicator" aria-hidden="true">
+        <span class="indicator__label">Now at</span>
+        <span class="indicator__code" data-indicator-code>A00</span>
+        <span class="indicator__name" data-indicator-name>Antonio Vinciguerra</span>
+        <span class="indicator__next"><small>Next</small> <span data-indicator-next>Soul Bound</span></span>
+        <span class="indicator__keys"><kbd>←</kbd><kbd>→</kbd> ride</span>
+      </aside>
+
+      <section class="station station--info" id="about" data-code="A00" data-name="About">
+        <div class="station__head">
+          <span class="station__mark" aria-hidden="true"></span>
+          <h2>About <span>Station information</span></h2>
+        </div>
+        <div class="station__body about">
+          <img class="about__photo" src="img/avatar.webp" alt="Antonio Vinciguerra" width="160" height="160" />
+          <div class="about__text">
+            <p>
+              I have always loved <strong>languages</strong>, which first led me to work in the
+              hospitality industry for <strong>8 years</strong>, managing hotel operations and
+              developing strong communication and problem-solving skills while interacting with
+              people from around the world.
+            </p>
+            <p>
+              Later, I decided to explore a new kind of language — coding — and completed the
+              <strong>full-stack web development</strong> course at <strong>Le Wagon</strong>.
+              Since then I've built multiple projects, collaborated with other developers, and led
+              the development of a hotel website as <strong>team lead</strong>.
+            </p>
+            <p>
+              Today I ship <strong>native iOS apps</strong> on top of <strong>Ruby on Rails</strong>
+              backends — two of them live on the App Store — and bring real-world business
+              experience to practical, <strong>user-focused</strong> software.
+            </p>
+            <dl class="facts">
+              <div><dt>Based</dt><dd>Tokyo, Japan</dd></div>
+              <div><dt>Born</dt><dd>14 Sep 1991</dd></div>
+              <div><dt>Mail</dt><dd><a href="mailto:anto.vinciguerra@hotmail.com">anto.vinciguerra@hotmail.com</a></dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="line__title" id="projects">Projects <span>All stations</span></h2>
+
+      <!-- A01 -->
+      <article class="station station--terminal" id="soul-bound" data-code="A01" data-name="Soul Bound">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>01</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Soul Bound <small>Habit RPG · iOS</small></h3>
+        </div>
+        <div class="station__body station__body--wide">
+          <div class="station__copy">
+            <p>
+              A habit tracker built as a role-playing game. Describe the life you're trying to
+              build; it writes your daily quests, and your character levels up only as far as you
+              actually do. Quests pay XP, coins and gems, and can drop a chest with gear you keep.
+            </p>
+            <p>
+              Native SwiftUI over a Rails JSON backend: Sign in with Apple, StoreKit 2 gem
+              bundles verified server-side, Home and Lock Screen widgets, 3D chests in SceneKit,
+              eleven languages. Live on the App Store since 14 September 2026.
+            </p>
+            <ul class="lines" aria-label="Stack">
+              <li class="l-rails">Ruby on Rails</li>
+              <li class="l-pg">PostgreSQL</li>
+              <li class="l-swift">Swift · SwiftUI</li>
+              <li class="l-storekit">StoreKit 2</li>
+              <li class="l-ai">OpenAI API</li>
+            </ul>
+            <div class="exits">
+              <a class="exit exit--primary" href="https://apps.apple.com/app/id6805369076" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.8-3.1-.8C6.1 7.4 3.9 9.4 3.9 13c0 2.1.8 4.4 1.8 5.9.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-3.5-1.3-3.5-3.5zM14.1 5.6c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z" fill="currentColor" stroke="none"/></svg>
+                App Store
+              </a>
+              <a class="exit" href="https://github.com/Antonio9194/SoulBound1.0" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <div class="shots shots--sb" aria-label="Soul Bound screenshots">
+            <img src="img/soulbound/phone-1.webp" alt="Soul Bound guild screen: the day's quests and the character's level" width="560" height="1108" loading="lazy" />
+            <img src="img/soulbound/phone-4.webp" alt="Soul Bound store: gear with coin and gem prices" width="560" height="1108" loading="lazy" />
+            <video class="shots__video" src="img/soul-bound.mp4" poster="img/soulbound/phone-3.webp" autoplay muted loop playsinline preload="metadata" width="1080" height="1920" aria-label="Soul Bound trailer"></video>
+          </div>
+        </div>
+      </article>
+
+      <!-- A02 -->
+      <article class="station station--terminal" id="velora" data-code="A02" data-name="Velora">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>02</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <img class="station__icon" src="img/velora-icon.png" alt="" width="48" height="48" />
+          <h3>Velora <small>Expense tracker · iOS</small></h3>
+        </div>
+        <div class="station__body station__body--copy">
+          <div class="station__copy">
+            <p>
+              Say "lunch, 1,200 yen" or photograph the receipt and the expense is logged — an AI
+              assistant fills in title, amount, category and date. Monthly budget and income,
+              daily limit, a calendar of spending, subscriptions, charts and savings jars.
+            </p>
+            <p>
+              Native iOS over Rails and PostgreSQL. Sign in with Apple and Google, push
+              notifications, Home and Lock Screen widgets, a free plan with metered AI entries
+              and a Plus subscription through StoreKit 2 with a one-week trial. Eight languages.
+            </p>
+            <ul class="lines" aria-label="Stack">
+              <li class="l-rails">Ruby on Rails</li>
+              <li class="l-pg">PostgreSQL</li>
+              <li class="l-swift">Swift · SwiftUI</li>
+              <li class="l-storekit">StoreKit 2</li>
+              <li class="l-ai">OpenAI API</li>
+            </ul>
+            <div class="exits">
+              <a class="exit exit--primary" href="https://apps.apple.com/app/id6771303753" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.8-3.1-.8C6.1 7.4 3.9 9.4 3.9 13c0 2.1.8 4.4 1.8 5.9.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-3.5-1.3-3.5-3.5zM14.1 5.6c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z" fill="currentColor" stroke="none"/></svg>
+                App Store
+              </a>
+              <a class="exit" href="https://velorapp.up.railway.app" target="_blank" rel="noopener">Web</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- A03 -->
+      <article class="station station--live" id="hotel-finance" data-code="A03" data-name="Hotel Finance Tracker">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>03</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Hotel Finance Tracker <small>Live · Rails</small></h3>
+        </div>
+        <div class="station__body">
+          <p>
+            A private financial management tool for a hotel: monthly income and expenses by
+            category, profit at a glance, and a full transaction history.
+          </p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://hotelfinance.up.railway.app/" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/hotel_finance" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A04 -->
+      <article class="station station--live" id="inventory" data-code="A04" data-name="Inventory Manager">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>04</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Inventory Manager <small>Live · Rails</small></h3>
+        </div>
+        <div class="station__body">
+          <p>
+            Add items, record stock movements, keep stock levels current and get low-stock alerts
+            before you run out.
+          </p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-stimulus">Stimulus</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://inventorymanage.up.railway.app" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/Inventory-Manager" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A05 -->
+      <article class="station station--live" id="morikoya" data-code="A05" data-name="Morikoya">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>05</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Morikoya <small>Live · Rails</small></h3>
+        </div>
+        <div class="station__body">
+          <p>
+            A hotel management web application for room availability, reservations and guest
+            bookings.
+          </p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-stimulus">Stimulus</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://morikoya-3311853fd76f.herokuapp.com/" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/morikoya" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A06 -->
+      <article class="station" id="watch-list" data-code="A06" data-name="Watch List">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>06</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Watch List</h3>
+        </div>
+        <div class="station__body">
+          <p>Save the movies you want to watch and organise them into customisable watchlists.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-js">JavaScript</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://rails-watch-list-38lm.onrender.com" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/rails-watch-list" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A07 -->
+      <article class="station" id="airbnb" data-code="A07" data-name="Airbnb-like Marketplace">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>07</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Airbnb-like Marketplace</h3>
+        </div>
+        <div class="station__body">
+          <p>A full-stack marketplace for listing, discovering and booking short-term stays.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-js">JavaScript</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://rails-simple-airbnb.onrender.com" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/rails-simple-airbnb" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A08 -->
+      <article class="station" id="yelp" data-code="A08" data-name="Yelp-like Review Platform">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>08</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Yelp-like Review Platform</h3>
+        </div>
+        <div class="station__body">
+          <p>A Rails MVP for browsing restaurants and submitting reviews.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-js">JavaScript</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://rails-yelp-mvp.onrender.com" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/rails-yelp-mvp" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A09 -->
+      <article class="station" id="task-manager" data-code="A09" data-name="Task Manager">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>09</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Task Manager</h3>
+        </div>
+        <div class="station__body">
+          <p>Create, update and manage tasks — a Rails CRUD app, done properly.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-js">JavaScript</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://rails-task-manager-wzj5.onrender.com/" target="_blank" rel="noopener">Live</a>
+            <a class="exit" href="https://github.com/Antonio9194/rails-task-manager" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A10 -->
+      <article class="station" id="ping-bot" data-code="A10" data-name="Ping Bot">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>10</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Ping Bot</h3>
+        </div>
+        <div class="station__body">
+          <p>A small bot that pings web apps deployed on Render so they never fall asleep.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-rails">Ruby on Rails</li><li class="l-pg">PostgreSQL</li><li class="l-stimulus">Stimulus</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://github.com/Antonio9194/Bot" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- A11 -->
+      <article class="station station--last" id="insurance" data-code="A11" data-name="Insurance Manager">
+        <div class="station__head">
+          <span class="code" aria-hidden="true"><b>A</b>11</span>
+          <span class="station__mark" aria-hidden="true"></span>
+          <h3>Insurance Manager</h3>
+        </div>
+        <div class="station__body">
+          <p>An insurance management web app built to help an insurance company run its everyday workflows.</p>
+          <ul class="lines" aria-label="Stack"><li class="l-ejs">EJS</li><li class="l-js">JavaScript</li></ul>
+          <div class="exits">
+            <a class="exit exit--primary" href="https://github.com/Antonio9194/1.0-Insurance" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <div class="container">
-      <!-- Hero / Profile card -->
-      <div class="contact-section">
-        <img src="img/avatar.png" alt="avatar" />
-        <div class="contact">
-          <h2>Antonio Vinciguerra</h2>
-          <h5 class="role">Full-stack Web Developer</h5>
-          <p class="social">
-            <a
-              class="github"
-              href="https://github.com/Antonio9194"
-              target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a
-              class="linkedin"
-              href="https://www.linkedin.com/in/yourprofile"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-          </p>
-          <div class="cv">
-            <a href="img/CV.pdf" target="_blank">View Resume</a>
-          </div>
-        </div>
-        <!-- Info moved out of .contact so it can be a right column -->
-        <div class="info">
-          <div class="mail">
-            <i class="fa-regular fa-envelope"></i>
-            <a class="mailto" href="mailto:anto.vinciguerra@hotmail.com">
-              <h5>anto.vinciguerra@hotmail.com</h5>
-            </a>
-          </div>
-          <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <h5>Tokyo, Japan</h5>
-          </div>
-          <div class="date">
-            <i class="fa-regular fa-calendar"></i>
-            <h5>14, SEP. 1991</h5>
-          </div>
-        </div>
-      </div>
+    <!-- Lines serving this station -->
+    <section class="serving" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills <span>Connecting lines</span></h2>
+      <p class="serving__legend">Every line that stops here, with the stations it reaches.</p>
+      <ul class="serving__list">
+        <li class="serving__line l-rails"><span class="serving__band"></span><strong>Backend</strong><span>Ruby · Ruby on Rails · PostgreSQL · REST/JSON APIs · Devise · ActiveJob</span></li>
+        <li class="serving__line l-swift"><span class="serving__band"></span><strong>iOS</strong><span>Swift · SwiftUI · StoreKit 2 · WidgetKit · Sign in with Apple · App Store Connect</span></li>
+        <li class="serving__line l-js"><span class="serving__band"></span><strong>Frontend</strong><span>HTML · CSS · JavaScript · Stimulus · Hotwire · Bootstrap</span></li>
+        <li class="serving__line l-ai"><span class="serving__band"></span><strong>AI</strong><span>OpenAI API — voice and receipt capture, generated quests</span></li>
+        <li class="serving__line l-tools"><span class="serving__band"></span><strong>Tools</strong><span>Git · GitHub · Railway · Heroku · Render · Figma · Postman · Xcode</span></li>
+      </ul>
+    </section>
 
-      <div class="main">
-        <!-- About Me -->
-        <div class="about-section" id="about">
-          <h2>About Me</h2>
-          <p>
-            I have always loved <strong>languages</strong>, which first led me
-            to work in the hospitality industry for <strong>8 years</strong>,
-            managing hotel operations and developing strong communication and
-            problem-solving skills while interacting with people from around the
-            world.
-          </p>
+    <footer class="terminus">
+      <p><strong>Antonio Vinciguerra</strong> · Tokyo · <a href="mailto:anto.vinciguerra@hotmail.com">anto.vinciguerra@hotmail.com</a></p>
+      <p><a class="exit exit--primary" href="img/CV.pdf" target="_blank" rel="noopener">View CV</a> <a class="exit" href="#top">Back to the start</a></p>
+    </footer>
 
-          <p>
-            Later, I decided to explore a new kind of language—coding—and
-            completed the
-            <strong>full-stack web development</strong> course at
-            <strong> Le Wagon</strong>. Since then, I've built multiple small
-            projects, collaborated with other developers, and most recently led
-            the development of a hotel website as <strong>team lead</strong>.
-          </p>
-
-          <p>
-            I bring together <strong>real-world business experience</strong> and
-            hands-on technical skills to create practical,
-            <strong>user-focused</strong> web applications.
-          </p>
-        </div>
-
-        <div class="project-section" id="projects">
-          <!-- Project Section -->
-          <h2>Projects</h2>
-          <div class="projects">
-            <div class="project">
-              <h3>Hotel Finance Tracker</h3>
-              <p>
-                Hotel Finance Tracker — A private financial management tool for
-                Hotel. Track monthly income and expenses by category, monitor
-                profit at a glance, and keep a full transaction history. Built
-                with Ruby on Rails.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-              </div>
-              <div class="buttons">
-                <a href="https://hotelfinance.up.railway.app/" target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/hotel_finance"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            <div class="project">
-              <h3>Soul Bound</h3>
-              <p>
-                A gamified productivity and wellness web application that turns
-                personal goals into RPG-style quests and progression.
-              </p>
-
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-                <span>Swift</span>
-              </div>
-
-              <div class="buttons">
-                <a href="">Live on IOS appstore from 14th September</a>
-                <a
-                  href="https://github.com/Antonio9194/SoulBound1.0"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            <div class="project">
-              <h3>Velora</h3>
-              <p>
-                A full-stack iOS app built with Ruby on Rails and Swift. The app
-                uses a WKWebView to serve a Rails web app natively, with a
-                custom AI assistant that lets users add expenses by sending a
-                voice message or uploading a receipt photo. Features include
-                expense and subscription tracking, budget management, spending
-                charts, piggy jar savings goals, push notifications, Apple Sign
-                In, and in-app subscriptions via StoreKit 2. Supports 8
-                languages.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-                <span>OpenAI API</span>
-              </div>
-              <div class="buttons">
-                <a href="https://velorapp.up.railway.app" target="_blank"
-                  >Live</a
-                >
-                <a href="" target="_blank">Github</a>
-              </div>
-            </div>
-            <div class="project">
-              <h3>Inventory Manager</h3>
-              <p>
-                Inventory manager app that lets you add items, create stock
-                movements, keep up to date with your stock and low stock alert.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-              </div>
-              <div class="buttons">
-                <a href="https://inventorymanage.up.railway.app" target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/Inventory-Manager"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            <div class="project">
-              <h3>Morikoya</h3>
-              <p>
-                A hotel management web application for handling room
-                availability, reservations, and guest bookings.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-              </div>
-              <div class="buttons">
-                <a
-                  href="https://morikoya-3311853fd76f.herokuapp.com/"
-                  target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/morikoya"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            <div class="project">
-              <h3>Ivy</h3>
-              <p>
-                An AI-powered work assistant designed to streamline tasks and
-                improve productivity.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-              </div>
-              <div class="buttons">
-                <a href="">Coming Soon</a>
-                <a href="https://github.com/Antonio9194/Ivy" target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            <div class="project">
-              <h3>Ping Bot</h3>
-              <p>
-                A simple bot designed to ping web applications deployed on
-                Render to keep them active.
-              </p>
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>Stimulus</span>
-              </div>
-              <div class="buttons">
-                <a href="https://github.com/Antonio9194/Bot" target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-            
-
-            <div class="project">
-              <h3>Watch List</h3>
-              <p>
-                An application that allows users to save movies they want to
-                watch and organize them into customizable watchlists.
-              </p>
-
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="buttons">
-                <a
-                  href="https://rails-watch-list-38lm.onrender.com"
-                  target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/rails-watch-list"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-
-            <div class="project">
-              <h3>Airbnb-like Marketplace</h3>
-              <p>
-                A full-stack marketplace web application enabling users to list,
-                discover, and book short-term accommodations.
-              </p>
-
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="buttons">
-                <a
-                  href="https://rails-simple-airbnb.onrender.com"
-                  target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/rails-simple-airbnb"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-
-            <div class="project">
-              <h3>Yelp-like Review Platform</h3>
-              <p>
-                A Ruby on Rails MVP that enables users to browse restaurants and
-                submit reviews in a Yelp-style platform.
-              </p>
-
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="buttons">
-                <a href="https://rails-yelp-mvp.onrender.com" target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/rails-yelp-mvp"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-
-            <div class="project">
-              <h3>Task Manager</h3>
-              <p>
-                A Ruby on Rails task manager web application enabling users to
-                create, update, and manage tasks efficiently.
-              </p>
-
-              <div class="stack">
-                <span>Ruby on Rails</span>
-                <span>PostgreSQL</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="buttons">
-                <a
-                  href="https://rails-task-manager-wzj5.onrender.com/"
-                  target="_blank"
-                  >Live</a
-                >
-                <a
-                  href="https://github.com/Antonio9194/rails-task-manager"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-
-            <div class="project">
-              <h3>Insurance Manager</h3>
-              <p>
-                An insurance management web application developed to help an
-                insurance company handle essential tasks and workflows.
-              </p>
-
-              <div class="stack">
-                <span>EJS</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="buttons">
-                <a
-                  href="https://github.com/Antonio9194/1.0-Insurance"
-                  target="_blank"
-                  >Github</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-section" id="skills">
-          <!-- Skills Section -->
-          <h2>Skills</h2>
-          <div class="skills">
-            <div class="skill">
-              <h3>Frontend</h3>
-              <div class="stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-                <span>Stimulus</span>
-              </div>
-            </div>
-
-            <div class="skill">
-              <h3>Backend</h3>
-              <div class="stack">
-                <span>Ruby</span>
-                <span>Rails</span>
-              </div>
-            </div>
-
-            <div class="skill">
-              <h3>Database & Tools</h3>
-              <div class="stack">
-                <span>PostgreSQL</span>
-                <span>Figma</span>
-                <span>Postman</span>
-                <span>Github</span>
-                <span>Heroku</span>
-                <span>Render</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script src="js/app.js"></script>
-      </div>
-    </div>
+    <script src="js/app.js"></script>
   </body>
 </html>

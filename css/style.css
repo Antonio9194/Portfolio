@@ -1,578 +1,1379 @@
-/* ===========================
-   VARIABLES
-   =========================== */
+/* Antonio Vinciguerra — portfolio
+   The page is a Tokyo transit line seen on the in-car display at night: navy
+   glass, one rose route line that runs the whole height, every project a
+   numbered station on it. Line colours are the real Tokyo ones, read as light;
+   they only ever name a line. */
+
 :root {
-  --bg-primary:    #090c14;
-  --bg-secondary:  #0f1322;
-  --bg-card:       #131827;
-  --gold-1:        #c9a84c;
-  --gold-2:        #e8d08a;
-  --gold-grad:     linear-gradient(135deg, #c9a84c, #e8d08a);
-  --text-1:        #eef0f6;
-  --text-2:        #8b95b0;
-  --text-3:        #50586e;
-  --border-dim:    rgba(201, 168, 76, 0.12);
-  --border-gold:   rgba(201, 168, 76, 0.38);
-  --glow:          0 0 28px rgba(201, 168, 76, 0.08);
-  --shadow:        0 6px 30px rgba(0, 0, 0, 0.5);
-  --radius:        16px;
-  --radius-sm:     10px;
-  --nav-h:         54px;
+  /* Night: the in-car display above the train door — deep navy glass, every
+     line colour read as light. */
+  --ground: #0b1326;
+  --board: #121c36;
+  --ink: #eef2ff;
+  --ink-2: #b7c0dc;
+  --ink-3: #8d98b8;
+  --hair: rgba(238, 242, 255, 0.12);
+
+  /* The route this page is */
+  --route: #ff7b72;
+  --route-deep: #ff5a4f;
+  --route-dim: rgba(255, 123, 114, 0.28);
+  --glow: 0 0 14px rgba(255, 123, 114, 0.55);
+
+  /* Tokyo lines, as skill lines */
+  --ginza: #ffa21f;
+  --marunouchi: #ff2d3f;
+  --tozai: #16b8e0;
+  --chiyoda: #15d99c;
+  --hanzomon: #a98cff;
+  --namboku: #1fcfbd;
+  --oedo: #e0199a;
+  --mita: #2d9cf0;
+  --shinjuku: #7ed66a;
+  --yurakucho: #d9b86a;
+
+  --font: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+
+  --line-w: 10px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --measure: 62ch;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* ===========================
-   RESET / BASE
-   =========================== */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
 
 body {
-  background-color: var(--bg-primary);
-  background-image:
-    radial-gradient(ellipse 60% 50% at 15% 55%, rgba(201, 168, 76, 0.045) 0%, transparent 100%),
-    radial-gradient(ellipse 50% 40% at 85% 15%, rgba(201, 168, 76, 0.03) 0%, transparent 100%);
-  font-family: "Inter", sans-serif;
-  color: var(--text-1);
-  min-height: 100vh;
   margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--route);
+  color: var(--ground);
+}
+
+html {
+  scrollbar-color: var(--route-dim) var(--ground);
+}
+
+:focus-visible {
+  outline: 3px solid var(--mita);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
-  transition: color 0.2s;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
 }
 
-h2, h3 {
-  font-family: "Poppins", sans-serif;
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+p {
   margin: 0;
 }
 
-h5 { margin: 0; font-family: "Inter", sans-serif; }
+strong {
+  font-weight: 700;
+}
 
-p { margin: 0; }
+/* sub-labels on headings: the second line of every sign */
+h2 > span,
+h3 small {
+  display: inline-block;
+  margin-left: 0.6em;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  vertical-align: 0.25em;
+}
 
-/* ===========================
-   STICKY TOP NAVBAR
-   =========================== */
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
   z-index: 100;
 }
+.skip:focus {
+  left: 12px;
+}
 
-.nav {
-  display: flex;
-  flex-direction: row;
+/* ---------- Station codes: the rounded square with the coloured ring ---------- */
+
+.code {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  height: var(--nav-h);
-  background: rgba(9, 12, 20, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-dim);
-  border-radius: 0;
-  width: 100%;
-  padding: 0 1.5rem;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 3px solid var(--route);
+  background: #fff;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.code b {
+  font-size: 0.72em;
+  margin-right: 1px;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+.code--lg {
+  width: 64px;
+  height: 64px;
+  border-width: 5px;
+  border-radius: 14px;
+  font-size: 22px;
 }
 
-.aboutnav {
+/* ---------- Station board ---------- */
+
+.board {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 18px;
-  border-radius: 8px;
-  width: auto;
-  height: auto;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: all 0.22s ease;
-}
-
-.aboutnav i {
-  color: var(--text-3);
-  font-size: 0.85rem;
-  transition: color 0.22s;
-}
-
-.aboutnav a {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-3);
-  letter-spacing: 0.04em;
-  transition: color 0.22s;
-}
-
-.aboutnav:hover {
-  background: rgba(201, 168, 76, 0.08);
-  border-color: var(--border-gold);
-}
-
-.aboutnav:hover i,
-.aboutnav:hover a {
-  color: var(--gold-2);
-}
-
-/* ===========================
-   CONTAINER
-   =========================== */
-.container {
-  max-width: 960px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(28px, 4vw, 48px) var(--gutter) 0;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-  width: 100%;
 }
 
-/* ===========================
-   HERO / CONTACT SECTION
-   =========================== */
-.contact-section {
-  position: relative;
+.board__id {
   display: flex;
-  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.board__station {
+  font-size: clamp(34px, 5.4vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+
+.board__desc {
+  margin-top: 10px;
+  display: flex;
   align-items: center;
-  gap: 2rem;
-  width: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow), var(--glow);
-  padding: 2rem 2.5rem;
-  margin: 2rem 0 1.5rem;
-  overflow: hidden;
-}
-
-/* gold top accent bar */
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 10%; width: 80%;
-  height: 2px;
-  background: var(--gold-grad);
-  border-radius: 0 0 3px 3px;
-}
-
-/* ambient corner glow */
-.contact-section::after {
-  content: '';
-  position: absolute;
-  top: -40px; right: -40px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.07), transparent 70%);
-  pointer-events: none;
-}
-
-/* ===========================
-   AVATAR
-   =========================== */
-img {
-  position: relative;
-  top: auto; left: auto;
-  transform: none;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 3px solid var(--gold-1);
-  box-shadow: 0 0 0 5px rgba(201, 168, 76, 0.1), var(--shadow);
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-/* ===========================
-   CONTACT (center column)
-   =========================== */
-.contact {
-  flex: 1;
-  margin-top: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.contact h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.4rem;
-}
-
-.role {
-  display: inline-block;
-  background: linear-gradient(135deg, rgba(201,168,76,0.14), rgba(232,208,138,0.08));
-  border: 1px solid var(--border-gold);
-  border-radius: 20px;
-  padding: 4px 13px;
-  font-size: 0.68rem;
+  gap: 10px;
+  font-size: 17px;
   font-weight: 500;
-  color: var(--gold-2);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 0.9rem;
 }
-
-/* ===========================
-   SOCIAL ICONS
-   =========================== */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.6rem;
-  margin: 0 0 0.9rem;
-}
-
-.social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(201, 168, 76, 0.07);
-  border: 1px solid var(--border-gold);
+.dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  color: var(--gold-1);
-  font-size: 0.82rem;
-  transition: all 0.22s ease;
+  background: var(--route);
 }
 
-.social a:hover {
-  background: var(--gold-1);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 14px rgba(201, 168, 76, 0.35);
-}
-
-/* ===========================
-   RESUME BUTTON
-   =========================== */
-.cv { margin-top: 0; }
-
-.cv a {
-  display: inline-block;
-  background: var(--gold-grad);
-  color: #080b12;
-  padding: 8px 22px;
-  border-radius: 20px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: all 0.22s ease;
-  box-shadow: 0 4px 16px rgba(201, 168, 76, 0.28);
-  border: none;
-}
-
-.cv a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(201, 168, 76, 0.42);
-}
-
-/* ===========================
-   INFO BLOCK (right column)
-   =========================== */
-.info {
+.board__actions {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.15rem;
-  padding-left: 2rem;
-  border-left: 1px solid var(--border-dim);
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+
+.ico {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The ticket is the primary action: it looks like the thing you tap at the gate */
+.ticket {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 14px;
+  min-height: 48px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.8);
+  transition: transform 220ms var(--ease), box-shadow 220ms var(--ease);
+}
+.ticket:hover,
+.ticket:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.8);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  background: #fff;
+  transition: background 160ms var(--ease), color 160ms var(--ease);
+}
+.action:hover,
+.action:focus-visible {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Route map ---------- */
+
+.route {
+  max-width: 1400px;
+  margin: clamp(36px, 6vw, 72px) auto 0;
+  padding: 0 var(--gutter);
+}
+
+.route__title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.route__legend {
+  margin-top: 6px;
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+
+.map {
+  --stop-gap: 12px;
+  --line-y: 168px;
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0 0 24px 80px; /* run-in track: room for the train to dock before A01 */
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.15fr 1.15fr 1.15fr repeat(6, minmax(0, 1fr));
+  gap: var(--stop-gap);
+  align-items: start;
+  position: relative;
+}
+
+/* the line itself, drawn through the station markers */
+.map::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--line-y);
+  height: 13px;
+  background: var(--route);
+  border-radius: 7px;
+}
+
+.map__stop {
   min-width: 0;
 }
 
-.mail, .location, .date {
+.map__stop a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 0 4px;
+  min-height: 48px;
+}
+
+.map__stop .code {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(var(--line-y) - 18px);
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  transition: transform 220ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .map__stop a:hover .code {
+    transform: scale(1.06);
+  }
+}
+.map__stop a:focus-visible .code {
+  transform: scale(1.06);
+}
+.map__stop a:active .code {
+  transform: scale(0.96);
+  transition-duration: 100ms;
+}
+.map__stop.is-boarding .code {
+  animation: doors 420ms var(--ease-out);
+}
+@keyframes doors {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+
+.map__name {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.map__sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* terminals: the app icon stands on the line, the interchange marker is a double ring */
+.map__art {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.8);
+  margin-bottom: calc(-1 * var(--line-y) + 22px);
+  position: relative;
+  z-index: 2;
+}
+.map__art img {
+  width: 100%;
+  height: 100%;
+}
+.map__stop--terminal .code {
+  width: 64px;
+  height: 64px;
+  border-width: 5px;
+  border-radius: 14px;
+  font-size: 20px;
+  margin-top: calc(var(--line-y) - 26px);
+  box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--route);
+}
+.map__stop--terminal .map__name {
+  font-size: 18px;
+  font-weight: 900;
+}
+.map__stop--live .code {
+  width: 54px;
+  height: 54px;
+  font-size: 17px;
+  margin-top: calc(var(--line-y) - 21px);
+}
+.map__stop--live .map__name {
+  font-size: 16px;
+}
+
+.map__stop--soon .code {
+  border-style: dashed;
+  border-color: var(--ink-3);
+  color: var(--ink-3);
+}
+
+/* the "next station" board under the map */
+.next {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+.next a {
+  padding: 14px 4px 16px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: clamp(18px, 2.2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 48px;
+}
+.next a span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+.next a:hover,
+.next a:focus-visible {
+  color: var(--route-deep);
+}
+
+/* ---------- The line down the page ---------- */
+
+.line {
+  --rail-x: calc(var(--gutter) + 20px);
+  position: relative;
+  max-width: 1400px;
+  margin: clamp(56px, 8vw, 110px) auto 0;
+  padding: 0 var(--gutter) 40px;
+}
+
+/* the rail */
+.line::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--rail-x) - var(--line-w) / 2);
+  top: 0;
+  bottom: 0;
+  width: var(--line-w);
+  background: var(--route);
+  border-radius: 5px;
+}
+
+.line__title {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 900;
+  padding-left: 72px;
+  margin: 72px 0 8px;
+}
+
+/* the train: one object, seen twice — riding the route map, and riding the rail */
+.train {
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 24px;
+  will-change: transform;
+  pointer-events: none;
+}
+.train__glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.train__body {
+  fill: var(--ink);
+}
+.train__stripe {
+  fill: var(--route);
+}
+.train__windows rect,
+.train__windows path {
+  fill: var(--board);
+}
+.train__doors rect {
+  fill: var(--ground);
+  opacity: 0.5;
+}
+.train__lamp {
+  fill: var(--ginza);
+}
+/* the headlight: a soft beam ahead of the lamp while the train is moving */
+.train::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 80px;
+  height: 24px;
+  margin-top: -12px;
+  background: linear-gradient(to right, rgba(255, 162, 31, 0.45), rgba(255, 162, 31, 0));
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);
+  opacity: 0;
+  transition: opacity 160ms var(--ease-out);
+}
+.train.is-moving::after {
+  opacity: 1;
+}
+
+/* on the route map: sits on the line, nose to the right */
+.map__train {
+  position: absolute;
+  left: 0;
+  top: calc(var(--line-y) + 6.5px - 12px);
+  width: 80px;
+  height: 24px;
+  z-index: 3;
+  list-style: none;
+}
+.train--map {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+}
+
+/* on the rail: nose down */
+.train--rail {
+  left: calc(var(--rail-x) - 12px);
+  top: 0;
+  transform-origin: 12px 12px;
+  z-index: 3;
+}
+.train--rail .train__glyph {
+  transform: rotate(90deg);
+  transform-origin: 12px 12px;
+}
+.train--rail::after {
+  left: 12px;
+  top: 80px;
+  width: 24px;
+  height: 80px;
+  margin: 0 0 0 -12px;
+  background: linear-gradient(to bottom, rgba(255, 162, 31, 0.45), rgba(255, 162, 31, 0));
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+}
+
+/* in-car indicator: the display above the doors — one strip, sticky at the top */
+.indicator {
+  position: sticky;
+  top: 10px;
+  z-index: 5;
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 6px 8px;
-  border-radius: var(--radius-sm);
-  transition: background 0.2s;
+  gap: 12px;
+  margin: 0 0 0 calc(var(--rail-x) - var(--gutter) + 28px);
+  height: 42px;
+  padding: 0 14px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  line-height: 1.2;
 }
-
-.mail:hover, .location:hover, .date:hover {
-  background: rgba(201, 168, 76, 0.05);
+.indicator__label {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  opacity: 0.65;
+  flex: none;
 }
-
-.mail h5, .location h5, .date h5 {
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: var(--text-2);
+.indicator__code {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--route);
+  flex: none;
+}
+.indicator__name {
+  font-weight: 700;
+  font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+}
+.indicator__next {
+  margin-left: auto;
+  padding-left: 12px;
+  border-left: 1px solid rgba(238, 242, 255, 0.14);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(238, 242, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+.indicator__next small {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-right: 4px;
+}
+.indicator__keys {
+  font-size: 11px;
+  color: rgba(238, 242, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+.indicator__keys kbd {
+  font: inherit;
+  padding: 0 5px;
+  border: 1px solid rgba(238, 242, 255, 0.25);
+  border-radius: 4px;
+  line-height: 1.5;
+}
+@media (hover: none), (max-width: 820px) {
+  .indicator__keys {
+    display: none;
+  }
+}
+.line__title,
+.station {
+  scroll-margin-top: 64px;
 }
 
-.fa-envelope, .fa-location-dot, .fa-calendar {
-  display: inline-block;
-  padding: 6px 7px;
-  background: rgba(201, 168, 76, 0.09);
-  border: 1px solid var(--border-gold);
-  border-radius: 7px;
-  color: var(--gold-1);
-  font-size: 0.8rem;
-  flex-shrink: 0;
+/* ---------- Stations ---------- */
+
+.station {
+  position: relative;
+  padding: 36px 0 36px 72px;
 }
 
-.mailto { color: var(--text-2); }
-.mailto:hover { color: var(--gold-2); }
+.station__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-/* ===========================
-   MAIN CONTENT AREA
-   =========================== */
-.main {
+/* the marker on the rail */
+.station__mark {
+  position: absolute;
+  left: calc(var(--rail-x) - var(--gutter) - 11px);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 5px solid var(--route);
+  box-shadow: 0 0 0 4px var(--ground);
+  transition: transform 500ms var(--ease), background 300ms var(--ease);
+}
+.station.is-here .station__mark {
+  background: var(--route);
+  transform: scale(1.25);
+}
+
+.station__head h2,
+.station__head h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900;
+}
+.station__head h3 small {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.station__head .code {
+  margin-right: 2px;
+}
+.station__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.8);
+}
+.station--live .code {
+  width: 50px;
+  height: 50px;
+  font-size: 17px;
+}
+
+.station__body {
+  margin-top: 16px;
+  max-width: var(--measure);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  gap: 14px;
+}
+@media (min-width: 1100px) {
+  .station:not(.station--terminal):not(.station--info) .station__body {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, var(--measure)) minmax(240px, 360px);
+    column-gap: 56px;
+    align-items: start;
+  }
+  .station:not(.station--terminal):not(.station--info) .station__body p {
+    grid-row: 1 / span 2;
+  }
+}
+.station__body p {
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+/* terminals: copy beside real screenshots */
+.station--terminal {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+.station__body--wide {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+.station__copy,
+.station__body--copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: var(--measure);
+}
+
+/* three phones, stepped like cars seen from the platform */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.shots img,
+.shots__video {
   width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 1108;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #0a0a0a;
+  box-shadow: 0 18px 36px -18px rgba(0, 0, 0, 0.8);
+}
+.shots--sb img:nth-child(2) {
+  margin-top: 36px;
+}
+.shots--sb .shots__video {
+  margin-top: 72px;
+}
+
+/* under construction */
+.station--soon .station__mark {
+  border-style: dashed;
+  border-color: var(--ink-3);
+}
+.station--soon .code {
+  border-style: dashed;
+  border-color: var(--ink-3);
+  color: var(--ink-3);
+}
+
+.station--last {
+  padding-bottom: 8px;
+}
+
+/* ---------- Stack as lines ---------- */
+
+.lines {
+  list-style: none;
   margin: 0;
   padding: 0;
-}
-
-/* ===========================
-   SECTIONS
-   =========================== */
-.about-section,
-.project-section,
-.skills-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
-  padding: 1.75rem 2rem;
-  border-radius: var(--radius);
-  margin: 1rem 0;
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-}
-
-/* ambient corner glow */
-.about-section::after,
-.project-section::after,
-.skills-section::after {
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.07), transparent 70%);
-  pointer-events: none;
-}
-
-h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-1);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border-dim);
-  letter-spacing: 0.01em;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 38px;
-  height: 2px;
-  background: var(--gold-grad);
-  border-radius: 2px;
-}
-
-/* ===========================
-   ABOUT TEXT
-   =========================== */
-.about-section p {
-  background: transparent;
-  border: none;
-  color: var(--text-2);
-  padding: 0;
-  border-radius: 0;
-  height: auto;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.about-section p:last-child { margin-bottom: 0; }
-
-.about-section p strong {
-  color: var(--gold-2);
-  font-weight: 600;
-}
-
-/* ===========================
-   PROJECTS GRID
-   =========================== */
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-dim);
-  padding: 1.2rem;
-  border-radius: var(--radius-sm);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* gold top-edge reveal on hover */
-.project::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--gold-grad);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.project:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.09);
-}
-
-.project:hover::before { opacity: 1; }
-
-.project h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-1);
-  margin-bottom: 0.45rem;
-}
-
-.project p {
-  background: transparent;
-  border: none;
-  color: var(--text-2);
-  padding: 0;
-  border-radius: 0;
-  height: auto;
-  min-height: 72px;
-  font-size: 0.78rem;
-  line-height: 1.65;
-  margin-bottom: 0.75rem;
-  flex-grow: 1;
-}
-
-/* ===========================
-   STACK TAGS
-   =========================== */
-.stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  justify-content: flex-start;
-  margin-bottom: 0.7rem;
+  gap: 8px 14px;
+}
+.lines li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.lines li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--c, var(--ink-3));
+  flex: none;
 }
 
-.stack span {
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.24);
-  color: var(--gold-2);
-  padding: 3px 9px;
-  border-radius: 20px;
-  font-size: 0.67rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
+.l-rails { --c: var(--marunouchi); }
+.l-pg { --c: var(--mita); }
+.l-swift { --c: var(--ginza); }
+.l-storekit { --c: var(--hanzomon); }
+.l-ai { --c: var(--chiyoda); }
+.l-stimulus { --c: var(--tozai); }
+.l-js { --c: var(--yurakucho); }
+.l-ejs { --c: var(--shinjuku); }
+.l-tools { --c: var(--namboku); }
 
-/* ===========================
-   BUTTONS
-   =========================== */
-.buttons {
+/* ---------- Exits: the ways out of a station ---------- */
+
+.exits {
   display: flex;
-  gap: 0.5rem;
-  margin-top: auto;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
 }
-
-.buttons a {
-  flex: 1;
-  text-align: center;
-  padding: 7px 10px;
-  border-radius: 8px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: all 0.25s ease;
-  border: 1px solid var(--border-gold);
-  color: var(--gold-2);
-  background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(232,208,138,0.06));
+.exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  background: #fff;
+  transition: background 160ms var(--ease), color 160ms var(--ease), transform 160ms var(--ease);
 }
-
-.buttons a:hover {
-  background: var(--gold-grad);
-  color: #080b12;
-  box-shadow: 0 4px 14px rgba(201,168,76,0.3);
+.exit:hover,
+.exit:focus-visible {
+  background: var(--ink);
+  color: #fff;
 }
-
-/* single-button projects */
-.buttons a:only-child {
+.exit--primary {
+  background: var(--ink);
+  color: #fff;
+}
+.exit--primary:hover,
+.exit--primary:focus-visible {
+  background: var(--route-deep);
+  border-color: var(--route-deep);
+}
+.exit--closed {
+  border-style: dashed;
+  border-color: var(--ink-3);
+  color: var(--ink-3);
   background: transparent;
-  border-color: var(--border-dim);
-  color: var(--text-2);
+}
+.exit .ico {
+  width: 18px;
+  height: 18px;
 }
 
-.buttons a:only-child:hover {
-  border-color: var(--border-gold);
-  color: var(--text-1);
-  background: rgba(201,168,76,0.06);
-  box-shadow: none;
-}
+/* ---------- About ---------- */
 
-/* ===========================
-   SKILLS GRID
-   =========================== */
-.skills {
+.station--info {
+  padding-top: 8px;
+}
+.station--info .station__mark {
+  top: 18px;
+}
+.about {
+  max-width: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.9rem;
+  grid-template-columns: 160px minmax(0, var(--measure));
+  gap: 28px;
+  align-items: start;
+}
+.about__photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.8);
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.facts {
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+.facts div {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.facts dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.facts dd {
+  margin: 0;
+  font-weight: 500;
 }
 
-.skill {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-dim);
-  padding: 1.2rem;
-  border-radius: var(--radius-sm);
-  transition: border-color 0.25s;
+/* ---------- Lines serving this station ---------- */
+
+.serving {
+  max-width: 1400px;
+  margin: clamp(48px, 7vw, 96px) auto 0;
+  padding: 0 var(--gutter);
+}
+.serving h2 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 900;
+}
+.serving__legend {
+  margin-top: 6px;
+  color: var(--ink-2);
+}
+.serving__list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
-
-.skill:hover { border-color: var(--border-gold); }
-
-.skill h3 {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--gold-1);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.75rem;
+.serving__line {
+  display: grid;
+  grid-template-columns: 18px 140px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 12px 0;
+}
+.serving__band {
+  width: 18px;
+  height: 36px;
+  border-radius: 5px;
+  background: var(--c);
+}
+.serving__line strong {
+  font-size: 18px;
+  font-weight: 900;
+}
+.serving__line span:last-child {
+  color: var(--ink-2);
+  font-weight: 500;
 }
 
-.skill .stack {
-  margin-bottom: 0;
-  justify-content: flex-start;
+/* ---------- Terminus ---------- */
+
+.terminus {
+  max-width: 1400px;
+  margin: clamp(48px, 7vw, 96px) auto 0;
+  padding: 28px var(--gutter) 48px;
+  border-top: var(--line-w) solid var(--route);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.terminus p:last-child {
+  display: flex;
+  gap: 10px;
 }
 
-/* ===========================
-   MISC
-   =========================== */
-hr {
-  border: none;
-  border-top: 1px solid var(--border-dim);
-  margin: 0.5rem 0;
+/* ---------- Motion: the train is the one authored moment ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .rail-lit {
+    transition: none;
+  }
+  .train::after {
+    opacity: 0;
+  }
+  .train.is-moving .train__glyph {
+    filter: none;
+  }
+  .map__stop.is-boarding .code {
+    animation: none;
+  }
 }
 
-.github, .linkedin { color: var(--gold-1); }
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .map__name {
+    white-space: normal;
+    font-size: 13px;
+  }
+  .map__stop--terminal .map__name {
+    font-size: 15px;
+  }
+  .map__stop--live .map__name {
+    font-size: 14px;
+  }
+  .map__art {
+    width: 84px;
+    height: 84px;
+    border-radius: 20px;
+  }
+  .station__body--wide {
+    grid-template-columns: 1fr;
+  }
+  .shots--sb img:nth-child(2),
+  .shots--sb .shots__video {
+    margin-top: 0;
+  }
+  .shots {
+    max-width: 640px;
+  }
+  .shots--sb img:nth-child(2),
+  .shots--sb .shots__video {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    font-size: 16px;
+  }
+  .board {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .board__actions {
+    justify-content: flex-start;
+  }
+  .board__id {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .board__name {
+    min-width: 0;
+  }
+  .board__station {
+    font-size: clamp(26px, 7.4vw, 40px);
+    overflow-wrap: anywhere;
+  }
+  .code--lg {
+    width: 52px;
+    height: 52px;
+    border-width: 4px;
+    font-size: 18px;
+  }
+
+  /* the map turns vertical, like the diagram above the train door */
+  .map {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+    padding: 76px 0 24px 8px; /* run-in track above A01 */
+  }
+  .map::before,
+  .map__lit {
+    top: 0;
+    bottom: 0;
+    left: 23px;
+    right: auto;
+    width: var(--line-w);
+    height: auto;
+  }
+  .map__lit {
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+  .map__stop a {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 10px 0;
+  }
+  .map__stop .code,
+  .map__stop--terminal .code,
+  .map__stop--live .code {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+  .map__stop--terminal .code {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--route);
+  }
+  .map__art {
+    order: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    margin: 0 0 0 auto;
+    flex: none;
+  }
+  .map__stop--terminal .map__name,
+  .map__stop--live .map__name {
+    font-size: 16px;
+  }
+  .map__train {
+    left: 8px;
+    top: 0;
+  }
+  .train--map .train__glyph {
+    transform: rotate(90deg);
+    transform-origin: 12px 12px;
+  }
+  .train--map::after {
+    left: 12px;
+    top: 80px;
+    width: 24px;
+    height: 80px;
+    margin: 0 0 0 -12px;
+    background: linear-gradient(to bottom, rgba(255, 162, 31, 0.45), rgba(255, 162, 31, 0));
+    clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+  }
+  .map__name {
+    white-space: normal;
+    text-align: left;
+    font-size: 16px;
+  }
+  .map__sub {
+    order: 2;
+  }
+  .next {
+    grid-template-columns: 1fr;
+  }
+
+  .line {
+    --rail-x: calc(var(--gutter) + 10px);
+  }
+  .line__title,
+  .station {
+    padding-left: 44px;
+  }
+  .indicator {
+    margin-left: 24px;
+    height: 38px;
+    gap: 8px;
+    padding: 0 10px;
+  }
+  .indicator__next {
+    display: none;
+  }
+  .station__head {
+    flex-wrap: wrap;
+  }
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about__photo {
+    width: 112px;
+    height: 112px;
+  }
+  .serving__line {
+    grid-template-columns: 14px minmax(0, 1fr);
+  }
+  .serving__line span:last-child {
+    grid-column: 2;
+  }
+  .shots {
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+  }
+  .station__head h3 {
+    font-size: 24px;
+  }
+  .shots img,
+  .shots__video {
+    border-radius: 14px;
+  }
+  .shots--sb .shots__video {
+    grid-column: 1 / -1;
+    aspect-ratio: 9 / 16;
+    max-width: 220px;
+  }
+}
+
+
+/* ---------- Night rendition: everything that was ink-on-enamel becomes light-on-glass ---------- */
+
+.code {
+  background: var(--board);
+  color: var(--ink);
+}
+.map__stop--terminal .code {
+  box-shadow: 0 0 0 4px var(--ground), 0 0 0 7px var(--route);
+}
+/* the unopened station still punches the line like every other stop */
+.map__stop--soon .code {
+  background: var(--ground);
+}
+.station--soon .code {
+  background: transparent;
+}
+
+.ticket {
+  background: var(--ink);
+  color: var(--ground);
+  box-shadow: 0 10px 22px -10px rgba(0, 0, 0, 0.8);
+}
+.ticket:hover,
+.ticket:focus-visible {
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.8);
+}
+
+.action,
+.exit {
+  background: transparent;
+  border-color: rgba(238, 242, 255, 0.35);
+  color: var(--ink);
+}
+.action:hover,
+.action:focus-visible,
+.exit:hover,
+.exit:focus-visible {
+  background: var(--ink);
+  color: var(--ground);
+  border-color: var(--ink);
+}
+.exit--primary {
+  background: var(--route);
+  border-color: var(--route);
+  color: var(--ground);
+}
+.exit--primary:hover,
+.exit--primary:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ground);
+}
+.exit--closed {
+  border-color: var(--ink-3);
+  color: var(--ink-3);
+}
+
+/* the line is light: a dim rail with a lit rail laid over it as far as the train has come */
+.map::before {
+  background: var(--route-dim);
+}
+.map__lit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--line-y);
+  height: 13px;
+  background: var(--route);
+  border-radius: 7px;
+  box-shadow: var(--glow);
+  transform: scaleX(0);
+  transform-origin: left center;
+  list-style: none;
+  z-index: 0;
+  pointer-events: none;
+}
+.line::before {
+  background: var(--route-dim);
+}
+.rail-lit {
+  position: absolute;
+  left: calc(var(--rail-x) - var(--line-w) / 2);
+  top: 0;
+  bottom: 0;
+  width: var(--line-w);
+  background: var(--route);
+  border-radius: 5px;
+  box-shadow: var(--glow);
+  transform: scaleY(0);
+  transform-origin: center top; /* scaled per frame by the rail spring, no transition */
+  z-index: 1;
+}
+
+.station__mark {
+  background: var(--board);
+  border-color: var(--route-dim);
+  box-shadow: 0 0 0 4px var(--ground);
+  z-index: 2;
+}
+.station.is-here .station__mark,
+.station.is-passed .station__mark {
+  border-color: var(--route);
+}
+.station.is-here .station__mark {
+  background: var(--route);
+  box-shadow: 0 0 0 4px var(--ground), var(--glow);
+}
+.station--soon .station__mark {
+  border-color: var(--ink-3);
+}
+
+/* the train is a light source: a soft white halo while it moves */
+.train.is-moving .train__glyph {
+  filter: drop-shadow(0 0 10px rgba(238, 242, 255, 0.55));
+}
+
+.indicator {
+  background: #05080f;
+  box-shadow: 0 0 0 1px rgba(238, 242, 255, 0.12), 0 12px 28px -10px rgba(0, 0, 0, 0.8);
+}
+
+.next a:hover,
+.next a:focus-visible {
+  color: var(--route);
+}
+
+.about__photo,
+.station__icon,
+.map__art {
+  box-shadow: 0 18px 36px -14px rgba(0, 0, 0, 0.9);
+}
+/* black app screens on navy: a hairline bezel so the proof reads as an object */
+.shots img,
+.shots__video {
+  box-shadow: 0 0 0 1px rgba(238, 242, 255, 0.14), 0 18px 36px -14px rgba(0, 0, 0, 0.9);
+}
+
+.terminus {
+  border-top-color: var(--route);
+}
+
+.skip {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+/* ---------- The opening: the display lights up ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .map::before {
+    transform-origin: left center;
+    animation: line-draw 1100ms var(--ease) both;
+  }
+  .map__stop {
+    animation: stop-light 520ms var(--ease) both;
+    animation-delay: calc(260ms + var(--i, 0) * 70ms);
+  }
+  .map__stop:nth-child(1) { --i: 0; }
+  .map__stop:nth-child(2) { --i: 1; }
+  .map__stop:nth-child(3) { --i: 2; }
+  .map__stop:nth-child(4) { --i: 3; }
+  .map__stop:nth-child(5) { --i: 4; }
+  .map__stop:nth-child(6) { --i: 5; }
+  .map__stop:nth-child(7) { --i: 6; }
+  .map__stop:nth-child(8) { --i: 7; }
+  .map__stop:nth-child(9) { --i: 8; }
+  .map__stop:nth-child(10) { --i: 9; }
+  .map__stop:nth-child(11) { --i: 10; }
+  .map__stop:nth-child(12) { --i: 11; }
+
+  @keyframes line-draw {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  @keyframes stop-light {
+    from { opacity: 0; transform: translateY(6px); filter: brightness(2.2); }
+    to { opacity: 1; transform: none; filter: brightness(1); }
+  }
+}
+
+@media (max-width: 820px) {
+  .map::before {
+    transform-origin: center top;
+  }
+  @keyframes line-draw {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+}

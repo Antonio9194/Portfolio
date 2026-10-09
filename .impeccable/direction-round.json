@@ -1,0 +1,133 @@
+{
+  "title": "Choose the visual world for your portfolio",
+  "question": "The roll assigned the Asakusa stamp book. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Goshuin Book",
+      "kicker": "THE ROLL",
+      "lineage": "御朱印帳 — the accordion stamp book pilgrims carry to Sensō-ji, every temple stamping a page in vermilion and brush ink",
+      "thesis": "Your career as a pilgrim's stamp book: each shipped product is a page stamped with a vermilion seal, a brush title and the date it went live — the book opens on Soul Bound and Velora.",
+      "palette": ["#1b3a6b", "#d23c2a", "#1a1612", "#f1e8d6", "#c8a24a"],
+      "materials": ["indigo brocade cover", "washi accordion pages", "vermilion seal paste", "sumi brush ink"],
+      "viewport": "The book lies open across the whole viewport on its indigo brocade ground: left page Soul Bound, right page Velora, each with a real screenshot set into the page like a pasted print, a vermilion seal SVG stamped over the corner, the title in brush script, the live date hand-written, and 'App Store' as the stamp's inscription. A paper title-slip top-left carries your name; three small index tabs (About · Projects · Skills) stick out of the top edge. Scrolling folds the next spread open.",
+      "risk": "Japanese material on a developer portfolio can read as costume to a recruiter outside Japan; it only holds if every page is a real shipped thing and the stamps are earned, not decorative.",
+      "raised": [
+        { "from": "challenger-wuxia", "raise": "Display titles are brush-made with total commitment — a real brush face and hand-drawn seal strokes, never a sans pretending." },
+        { "from": "challenger-seven-segment", "raise": "The unstamped page is designed as deliberately as a stamped one: Ivy's 'coming soon' is an empty page with the seal outline waiting, not a greyed card." },
+        { "from": "challenger-cathode-gauze", "raise": "No boxes, rules or dividers anywhere — grouping is the fold, the page edge and depth, and the whole book runs past the viewport edges." },
+        { "from": "challenger-cyclorama", "raise": "The spreads run in time order like named cue phases: 2024 bootcamp pages, 2025 production tools, 2026 App Store — the book reads as chronology, not a grid." }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Tokyo Transit Wayfinding",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "JR / Metro station signage — line colours, station numbering, bilingual sans, pictograms",
+      "thesis": "Your work laid out as one transit line: each project a numbered station, the two App Store apps the terminals, skills as the line colours — read in two seconds by anyone who has been in Tokyo.",
+      "palette": ["#ffffff", "#1a1a1a", "#0a8f3c", "#e4002b", "#f2b700"],
+      "materials": ["enamel sign board", "line-colour band", "bilingual sans", "pictogram"],
+      "viewport": "A horizontal line map across the viewport, stations numbered A01–A12 with Soul Bound and Velora as the two large terminal stations, your name on the station board top-left, and the CV as the ticket.",
+      "risk": "Familiar: the structured wayfinding portfolio is where many runs in this category land, and it is quieter than the stamp book.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-mook",
+      "label": "Fashion Mook Spread",
+      "verdict": "competitive",
+      "lineage": "Japanese fashion mook — coordinate photographs shingled across a spread with hand-drawn annotation ribbons",
+      "thesis": "Screenshots of every app shingled across the spread, each with a hand-drawn ribbon naming the stack and the feature — the project list as a magazine of outfits.",
+      "palette": ["#1a1612", "#b3241c", "#f3ecdf"],
+      "materials": ["printed lace ground", "shingled photographs", "hand-drawn ribbons"],
+      "viewport": "Six overlapping app screenshots across the first viewport, ribbons curling out of each naming it, the active one pulled forward.",
+      "case": "Fuses well — screenshots and annotations are exactly what a portfolio has; holds product clarity, loses audience identification (lace and lolita grammar don't belong to a Rails/iOS developer).",
+      "risk": "The shingle hides half of every screenshot until hovered; recruiters on phones never hover.",
+      "comp": ".impeccable/mocks/decision/challenger-mook.webp",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-gothic-lolita-mook-hero.webp"
+    },
+    {
+      "id": "challenger-wuxia",
+      "label": "Wuxia Painted Hoarding",
+      "verdict": "declined",
+      "lineage": "painted martial-arts film hoarding, brush title stacked vertically",
+      "thesis": "You as the swordsman mid-leap, projects billed in a hand-lettered band at the foot.",
+      "palette": ["#c8321e", "#1e2a38", "#e9e3d3", "#c9a24a"],
+      "materials": ["painted cinnabar", "ink-wash cloud", "gold title strokes"],
+      "viewport": "One held frame: figure leaping across the upper two thirds, the title painted down the right edge.",
+      "case": "Loses both axes — a hero portrait of a developer is the thing recruiters trust least, and the billing band flattens twelve projects into a cast list.",
+      "kept": "Brush-made display type with total commitment.",
+      "risk": "Pure poster; nothing on it works as a page.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-wuxia-painted-hoarding-hero.webp"
+    },
+    {
+      "id": "challenger-seven-segment",
+      "label": "Seven-Segment Display",
+      "verdict": "declined",
+      "lineage": "alarm clocks, price totems, scoreboards — one eight-cell mask, unlit segments designed too",
+      "thesis": "The portfolio as a scoreboard: apps shipped, users, years, every number in lit segments.",
+      "palette": ["#0b0b0b", "#ff2a1a", "#3a1410"],
+      "materials": ["LED segments", "ghost cells", "matte black"],
+      "viewport": "Four giant red digits counting shipped products, the rest of the page in ghost cells.",
+      "case": "Loses both — it needs numbers to brag with and you have none you may invent; a scoreboard with small honest numbers reads as a loss.",
+      "kept": "Absence drawn as deliberately as presence — the empty page for unshipped work.",
+      "risk": "Retro novelty by the second screen.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-seven-segment-alarm-clock-hero.webp"
+    },
+    {
+      "id": "challenger-cathode-gauze",
+      "label": "Cathode Numeral Stack",
+      "verdict": "declined",
+      "lineage": "nixie decade counter — every value present as a dark ghost, one struck forward in orange",
+      "thesis": "All twelve projects present as ghosts behind a bronze gauze, one struck forward at a time.",
+      "palette": ["#0c1326", "#ff7a1a", "#8a6a3a"],
+      "materials": ["anode gauze", "glowing numeral", "bench felt"],
+      "viewport": "A single struck project glowing orange over eleven unlit sisters in the same glass.",
+      "case": "Loses both — one project visible at a time is the opposite of what a skimming recruiter needs, and the nixie world belongs to no part of your story.",
+      "kept": "No boxes or dividers: grouping by depth alone.",
+      "risk": "Beautiful and unreadable at a glance.",
+      "hero": "https://impeccable.style/worlds/cards/operate-b-struck-cathode-gauze-hero.webp"
+    },
+    {
+      "id": "challenger-cyclorama",
+      "label": "Cyclorama Dawn",
+      "verdict": "declined",
+      "lineage": "theatre cyc lighting — black through cobalt and rose into white day",
+      "thesis": "Your career as a dawn cue sheet: bootcamp in the dark band, App Store apps in full day.",
+      "palette": ["#050507", "#1f3fa6", "#e58aa0", "#f6f3ee"],
+      "materials": ["cyc black", "cobalt horizon band", "rose wash"],
+      "viewport": "Horizontal horizon bands stacked dark to light, projects placed on their band.",
+      "case": "Loses both — the gradient-band page is the AI-portfolio default in new clothes, and theatre lighting is nobody's world here.",
+      "kept": "Named phases in time order — the book reads as chronology.",
+      "risk": "A gradient hero, however justified.",
+      "hero": "https://impeccable.style/worlds/cards/stagecraft-theater-lighting-cyclorama-dawn-hero.webp"
+    },
+    {
+      "id": "challenger-sleeping-city",
+      "label": "Sleeping City Fold",
+      "verdict": "declined",
+      "lineage": "surreal folded night city, districts dreaming different weather",
+      "thesis": "Tokyo folded like a quilt, each district a project dreaming its own weather.",
+      "palette": ["#0f1b3d", "#e8c15a", "#f0eadc"],
+      "materials": ["night navy", "embroidered stars", "quilt seams"],
+      "viewport": "A folded map of Tokyo with glowing districts.",
+      "case": "Loses both — a deformable illustrated city is weeks of art you don't have, and it says nothing about shipping software.",
+      "kept": "Nothing the stamp book lacked.",
+      "risk": "Illustration-dependent; unbuildable at this budget.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-sleeping-city-fold-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The dark developer portfolio: name and role hero, avatar, a grid of project cards with stack chips and Live/GitHub buttons, a skills section — executed impeccably.",
+    "palette": ["#0b0f1a", "#e6edf3", "#4f7cff"],
+    "materials": ["dark grid", "rounded cards", "stack chips"],
+    "viewport": "Centred name and role over an avatar, cards below.",
+    "risk": "Indistinguishable from every other bootcamp portfolio by design.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}
